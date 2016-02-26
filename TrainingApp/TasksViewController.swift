@@ -9,14 +9,14 @@
 import UIKit
 import Kinvey
 
-class ProductsViewController: UITableViewController {
+class TasksViewController: UITableViewController {
 
     
-    var products = [Product]()
+    var tasks = [Task]()
     
-    lazy var store: DataStore<Product>! = {
+    lazy var store: DataStore<Task>! = {
         //Create a DataStore of type "Sync"
-        return DataStore<Product>.getInstance(.Sync)
+        return DataStore<Task>.getInstance(.Sync)
     }()
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class ProductsViewController: UITableViewController {
 
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: "reloadDataFromServer", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: "reloadData", forControlEvents: .ValueChanged)
         
         if Kinvey.sharedClient.activeUser == nil {
             self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
@@ -34,24 +34,18 @@ class ProductsViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if Kinvey.sharedClient.activeUser != nil {
-            if products.count == 0 {
-                reloadDataFromServer()
-            }
-            else {
-                reloadDataFromCache()
-            }
+        if Kinvey.sharedClient.activeUser != nil && tasks.count == 0 {
+            reloadData()
         }
     }
     
-    func reloadDataFromServer() {
-
+    func reloadData() {
+        self.refreshControl?.beginRefreshing()
         do {
-            self.refreshControl?.beginRefreshing()
-            try store.pull() { (products, error) -> Void in
+            try store.pull() { (tasks, error) -> Void in
                 self.refreshControl?.endRefreshing()
-                if let products = products {
-                    self.products = products
+                if let tasks = tasks {
+                    self.tasks = tasks
                     if self.refreshControl?.refreshing ?? false {
                         self.refreshControl?.endRefreshing()
                     }
@@ -61,16 +55,6 @@ class ProductsViewController: UITableViewController {
         }
         catch {
             
-        }
-    }
-    
-    func reloadDataFromCache() {
-        
-        store.find { (products, error) -> Void in
-            if let products = products {
-                self.products = products
-                self.tableView.reloadData()
-            }
         }
     }
 
@@ -87,18 +71,18 @@ class ProductsViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return tasks.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")!
 
         // Configure the cell...
-        if indexPath.row < products.count {
-            let product = products[indexPath.row]
+        if indexPath.row < tasks.count {
+            let task = tasks[indexPath.row]
             
-            cell.textLabel?.text = product.name
-            cell.detailTextLabel?.text = product.productDescription
+            cell.textLabel?.text = task.action
+//            cell.detailTextLabel?.text = product.productDescription
         }
 
         return cell

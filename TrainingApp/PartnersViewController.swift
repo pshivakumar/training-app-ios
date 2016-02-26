@@ -21,22 +21,33 @@ class PartnersViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.clearsSelectionOnViewWillAppear = false
-        self.refreshControl?.addTarget(self, action: "reloadData", forControlEvents: .ValueChanged)
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
-        if Kinvey.sharedClient.activeUser != nil && partners.count == 0 {
-            reloadData()
+        self.clearsSelectionOnViewWillAppear = false
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.refreshControl?.addTarget(self, action: "reloadDataFromServer", forControlEvents: .ValueChanged)
+        
+        if Kinvey.sharedClient.activeUser == nil {
+            self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
         }
     }
     
-    func reloadData() {
-        self.refreshControl?.beginRefreshing()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if Kinvey.sharedClient.activeUser != nil {
+            if partners.count == 0 {
+                reloadDataFromServer()
+            }
+            else {
+                reloadDataFromCache()
+            }
+        }
+    }
+    
+    func reloadDataFromServer() {
+        
         do {
+            self.refreshControl?.beginRefreshing()
             try store.pull() { (partners, error) -> Void in
                 self.refreshControl?.endRefreshing()
                 if let partners = partners {
@@ -52,7 +63,17 @@ class PartnersViewController: UITableViewController {
             
         }
     }
-
+    
+    func reloadDataFromCache() {
+        
+        store.find { (partners, error) -> Void in
+            if let partners = partners {
+                self.partners = partners
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         

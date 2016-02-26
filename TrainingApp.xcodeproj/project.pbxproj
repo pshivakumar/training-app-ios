@@ -17,6 +17,8 @@
 		574B0FA11C6EA4D900CDC48F /* PromiseKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		574F62741C6B2B6800765760 /* Kinvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; };
 		574F62761C6B2C8800765760 /* Kinvey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C667CF601C80542E007B7567 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF5F1C80542E007B7567 /* Task.swift */; };
+		C667CF621C805643007B7567 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF611C805643007B7567 /* TasksViewController.swift */; };
 		C68100F21C804F540060269B /* TrainingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100F01C804F540060269B /* TrainingAppTests.swift */; };
 		C68100F81C804F9F0060269B /* TrainingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100F61C804F9F0060269B /* TrainingAppUITests.swift */; };
 		C68101091C80500C0060269B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100FA1C80500C0060269B /* AppDelegate.swift */; };
@@ -79,6 +81,8 @@
 		574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
 		574B0F9D1C6EA46100CDC48F /* MongoDBPredicateAdaptorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MongoDBPredicateAdaptorKit.framework; sourceTree = "<group>"; };
 		574F62731C6B2B6800765760 /* Kinvey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kinvey.framework; sourceTree = "<group>"; };
+		C667CF5F1C80542E007B7567 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C667CF611C805643007B7567 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C68100F01C804F540060269B /* TrainingAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingAppTests.swift; sourceTree = "<group>"; };
 		C68100F11C804F540060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68100F51C804F9F0060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,12 +197,14 @@
 				C68101001C80500C0060269B /* Book.swift */,
 				C68101071C80500C0060269B /* Product.swift */,
 				C68101051C80500C0060269B /* Partner.swift */,
+				C667CF5F1C80542E007B7567 /* Task.swift */,
 				C68101011C80500C0060269B /* DetailViewController.swift */,
 				C68101021C80500C0060269B /* Info.plist */,
 				C68101031C80500C0060269B /* LoginViewController.swift */,
 				C68101041C80500C0060269B /* MasterViewController.swift */,
 				C68101061C80500C0060269B /* PartnersViewController.swift */,
 				C68101081C80500C0060269B /* ProductsViewController.swift */,
+				C667CF611C805643007B7567 /* TasksViewController.swift */,
 			);
 			path = TrainingApp;
 			sourceTree = "<group>";
@@ -403,6 +409,8 @@
 				C681010D1C80500C0060269B /* Book.swift in Sources */,
 				C68101091C80500C0060269B /* AppDelegate.swift in Sources */,
 				C68101101C80500C0060269B /* LoginViewController.swift in Sources */,
+				C667CF601C80542E007B7567 /* Task.swift in Sources */,
+				C667CF621C805643007B7567 /* TasksViewController.swift in Sources */,
 				C68101111C80500C0060269B /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
