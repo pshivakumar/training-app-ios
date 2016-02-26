@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5701AB8E1C6916A900D7D9BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701AB8D1C6916A900D7D9BB /* AppDelegate.swift */; };
-		5701AB901C6916A900D7D9BB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701AB8F1C6916A900D7D9BB /* MasterViewController.swift */; };
-		5701AB921C6916A900D7D9BB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701AB911C6916A900D7D9BB /* DetailViewController.swift */; };
-		5701AB951C6916A900D7D9BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5701AB931C6916A900D7D9BB /* Main.storyboard */; };
-		5701AB971C6916A900D7D9BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5701AB961C6916A900D7D9BB /* Assets.xcassets */; };
-		5701AB9A1C6916A900D7D9BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5701AB981C6916A900D7D9BB /* LaunchScreen.storyboard */; };
-		5701ABA51C6916A900D7D9BB /* BookshelfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701ABA41C6916A900D7D9BB /* BookshelfTests.swift */; };
-		5701ABB01C6916A900D7D9BB /* BookshelfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701ABAF1C6916A900D7D9BB /* BookshelfUITests.swift */; };
-		5701ABC01C69187200D7D9BB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5701ABBF1C69187200D7D9BB /* Book.swift */; };
 		574B0F931C6E96A300CDC48F /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574B0F921C6E96A300CDC48F /* KinveyKit.framework */; };
 		574B0F941C6E96BA00CDC48F /* KinveyKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574B0F921C6E96A300CDC48F /* KinveyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		574B0F9B1C6EA44500CDC48F /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574B0F991C6EA44500CDC48F /* KeychainAccess.framework */; };
@@ -26,12 +17,21 @@
 		574B0FA11C6EA4D900CDC48F /* PromiseKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		574F62741C6B2B6800765760 /* Kinvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; };
 		574F62761C6B2C8800765760 /* Kinvey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5B7F18C5F8317F29928DB0ED /* Pods_Bookshelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEA6D6C2FCD9E9E3719916D /* Pods_Bookshelf.framework */; };
-		C68100EC1C8045C60060269B /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100EB1C8045C60060269B /* PartnersViewController.swift */; };
-		C68100EE1C8046010060269B /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100ED1C8046010060269B /* Partner.swift */; };
-		C6D031891C7DB0F600673DAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D031881C7DB0F600673DAD /* LoginViewController.swift */; };
-		C6D0318B1C7DC8DF00673DAD /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D0318A1C7DC8DF00673DAD /* ProductsViewController.swift */; };
-		C6D0318D1C7DE9D600673DAD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D0318C1C7DE9D600673DAD /* Product.swift */; };
+		C68100F21C804F540060269B /* TrainingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100F01C804F540060269B /* TrainingAppTests.swift */; };
+		C68100F81C804F9F0060269B /* TrainingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100F61C804F9F0060269B /* TrainingAppUITests.swift */; };
+		C68101091C80500C0060269B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100FA1C80500C0060269B /* AppDelegate.swift */; };
+		C681010A1C80500C0060269B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C68100FB1C80500C0060269B /* Assets.xcassets */; };
+		C681010B1C80500C0060269B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68100FC1C80500C0060269B /* LaunchScreen.storyboard */; };
+		C681010C1C80500C0060269B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68100FE1C80500C0060269B /* Main.storyboard */; };
+		C681010D1C80500C0060269B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101001C80500C0060269B /* Book.swift */; };
+		C681010E1C80500C0060269B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101011C80500C0060269B /* DetailViewController.swift */; };
+		C68101101C80500C0060269B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101031C80500C0060269B /* LoginViewController.swift */; };
+		C68101111C80500C0060269B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101041C80500C0060269B /* MasterViewController.swift */; };
+		C68101121C80500C0060269B /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101051C80500C0060269B /* Partner.swift */; };
+		C68101131C80500C0060269B /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101061C80500C0060269B /* PartnersViewController.swift */; };
+		C68101141C80500C0060269B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101071C80500C0060269B /* Product.swift */; };
+		C68101151C80500C0060269B /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101081C80500C0060269B /* ProductsViewController.swift */; };
+		EDB7A1859530BD672E0F56D2 /* Pods_TrainingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887632010D2FA9BD11C913D /* Pods_TrainingApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +40,14 @@
 			containerPortal = 5701AB821C6916A900D7D9BB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5701AB891C6916A900D7D9BB;
-			remoteInfo = Bookshelf;
+			remoteInfo = TrainingApp;
 		};
 		5701ABAC1C6916A900D7D9BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5701AB821C6916A900D7D9BB /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5701AB891C6916A900D7D9BB;
-			remoteInfo = Bookshelf;
+			remoteInfo = TrainingApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -69,34 +69,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		218B9F26CB3273C40F49F4FD /* Pods-Bookshelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookshelf.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bookshelf/Pods-Bookshelf.release.xcconfig"; sourceTree = "<group>"; };
-		4DEA6D6C2FCD9E9E3719916D /* Pods_Bookshelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookshelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5701AB8A1C6916A900D7D9BB /* Bookshelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookshelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5701AB8D1C6916A900D7D9BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5701AB8F1C6916A900D7D9BB /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		5701AB911C6916A900D7D9BB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		5701AB941C6916A900D7D9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5701AB961C6916A900D7D9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5701AB991C6916A900D7D9BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5701AB9B1C6916A900D7D9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5701ABA01C6916A900D7D9BB /* BookshelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookshelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5701ABA41C6916A900D7D9BB /* BookshelfTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfTests.swift; sourceTree = "<group>"; };
-		5701ABA61C6916A900D7D9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5701ABAB1C6916A900D7D9BB /* BookshelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookshelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5701ABAF1C6916A900D7D9BB /* BookshelfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfUITests.swift; sourceTree = "<group>"; };
-		5701ABB11C6916A900D7D9BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5701ABBF1C69187200D7D9BB /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		218B9F26CB3273C40F49F4FD /* Pods-TrainingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingApp/Pods-TrainingApp.release.xcconfig"; sourceTree = "<group>"; };
+		3887632010D2FA9BD11C913D /* Pods_TrainingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5701AB8A1C6916A900D7D9BB /* TrainingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5701ABA01C6916A900D7D9BB /* TrainingApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5701ABAB1C6916A900D7D9BB /* TrainingApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		574B0F921C6E96A300CDC48F /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		574B0F991C6EA44500CDC48F /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = "<group>"; };
 		574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
 		574B0F9D1C6EA46100CDC48F /* MongoDBPredicateAdaptorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MongoDBPredicateAdaptorKit.framework; sourceTree = "<group>"; };
 		574F62731C6B2B6800765760 /* Kinvey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kinvey.framework; sourceTree = "<group>"; };
-		C68100EB1C8045C60060269B /* PartnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
-		C68100ED1C8046010060269B /* Partner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partner.swift; sourceTree = "<group>"; };
-		C6D031881C7DB0F600673DAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C6D0318A1C7DC8DF00673DAD /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
-		C6D0318C1C7DE9D600673DAD /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		CCA53723B7B210E84D647E3E /* Pods-Bookshelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookshelf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bookshelf/Pods-Bookshelf.debug.xcconfig"; sourceTree = "<group>"; };
+		C68100F01C804F540060269B /* TrainingAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingAppTests.swift; sourceTree = "<group>"; };
+		C68100F11C804F540060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68100F51C804F9F0060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68100F61C804F9F0060269B /* TrainingAppUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingAppUITests.swift; sourceTree = "<group>"; };
+		C68100FA1C80500C0060269B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C68100FB1C80500C0060269B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C68100FD1C80500C0060269B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C68100FF1C80500C0060269B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C68101001C80500C0060269B /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		C68101011C80500C0060269B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C68101021C80500C0060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C68101031C80500C0060269B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C68101041C80500C0060269B /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		C68101051C80500C0060269B /* Partner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partner.swift; sourceTree = "<group>"; };
+		C68101061C80500C0060269B /* PartnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
+		C68101071C80500C0060269B /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C68101081C80500C0060269B /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		CCA53723B7B210E84D647E3E /* Pods-TrainingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingApp/Pods-TrainingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 				574B0F931C6E96A300CDC48F /* KinveyKit.framework in Frameworks */,
 				574B0F9C1C6EA44500CDC48F /* PromiseKit.framework in Frameworks */,
 				574B0F9B1C6EA44500CDC48F /* KeychainAccess.framework in Frameworks */,
-				5B7F18C5F8317F29928DB0ED /* Pods_Bookshelf.framework in Frameworks */,
+				EDB7A1859530BD672E0F56D2 /* Pods_TrainingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +138,9 @@
 				574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */,
 				574B0F921C6E96A300CDC48F /* KinveyKit.framework */,
 				574F62731C6B2B6800765760 /* Kinvey.framework */,
-				5701AB8C1C6916A900D7D9BB /* Bookshelf */,
-				5701ABA31C6916A900D7D9BB /* BookshelfTests */,
-				5701ABAE1C6916A900D7D9BB /* BookshelfUITests */,
+				C68100F91C80500C0060269B /* TrainingApp */,
+				C68100EF1C804F540060269B /* TrainingAppTests */,
+				C68100F41C804F9F0060269B /* TrainingAppUITests */,
 				5701AB8B1C6916A900D7D9BB /* Products */,
 				FA5394E248E7AF387541ADF0 /* Pods */,
 				A1150CA07CEE33D217D458F5 /* Frameworks */,
@@ -150,64 +150,64 @@
 		5701AB8B1C6916A900D7D9BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5701AB8A1C6916A900D7D9BB /* Bookshelf.app */,
-				5701ABA01C6916A900D7D9BB /* BookshelfTests.xctest */,
-				5701ABAB1C6916A900D7D9BB /* BookshelfUITests.xctest */,
+				5701AB8A1C6916A900D7D9BB /* TrainingApp.app */,
+				5701ABA01C6916A900D7D9BB /* TrainingApp.xctest */,
+				5701ABAB1C6916A900D7D9BB /* TrainingApp.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		5701AB8C1C6916A900D7D9BB /* Bookshelf */ = {
-			isa = PBXGroup;
-			children = (
-				5701AB8D1C6916A900D7D9BB /* AppDelegate.swift */,
-				C6D031881C7DB0F600673DAD /* LoginViewController.swift */,
-				C6D0318A1C7DC8DF00673DAD /* ProductsViewController.swift */,
-				C68100EB1C8045C60060269B /* PartnersViewController.swift */,
-				5701AB8F1C6916A900D7D9BB /* MasterViewController.swift */,
-				5701AB911C6916A900D7D9BB /* DetailViewController.swift */,
-				5701AB931C6916A900D7D9BB /* Main.storyboard */,
-				5701AB961C6916A900D7D9BB /* Assets.xcassets */,
-				5701AB981C6916A900D7D9BB /* LaunchScreen.storyboard */,
-				5701AB9B1C6916A900D7D9BB /* Info.plist */,
-				5701ABBF1C69187200D7D9BB /* Book.swift */,
-				C6D0318C1C7DE9D600673DAD /* Product.swift */,
-				C68100ED1C8046010060269B /* Partner.swift */,
-			);
-			path = Bookshelf;
-			sourceTree = "<group>";
-		};
-		5701ABA31C6916A900D7D9BB /* BookshelfTests */ = {
-			isa = PBXGroup;
-			children = (
-				5701ABA41C6916A900D7D9BB /* BookshelfTests.swift */,
-				5701ABA61C6916A900D7D9BB /* Info.plist */,
-			);
-			path = BookshelfTests;
-			sourceTree = "<group>";
-		};
-		5701ABAE1C6916A900D7D9BB /* BookshelfUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5701ABAF1C6916A900D7D9BB /* BookshelfUITests.swift */,
-				5701ABB11C6916A900D7D9BB /* Info.plist */,
-			);
-			path = BookshelfUITests;
 			sourceTree = "<group>";
 		};
 		A1150CA07CEE33D217D458F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4DEA6D6C2FCD9E9E3719916D /* Pods_Bookshelf.framework */,
+				3887632010D2FA9BD11C913D /* Pods_TrainingApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C68100EF1C804F540060269B /* TrainingAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C68100F01C804F540060269B /* TrainingAppTests.swift */,
+				C68100F11C804F540060269B /* Info.plist */,
+			);
+			path = TrainingAppTests;
+			sourceTree = "<group>";
+		};
+		C68100F41C804F9F0060269B /* TrainingAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C68100F51C804F9F0060269B /* Info.plist */,
+				C68100F61C804F9F0060269B /* TrainingAppUITests.swift */,
+			);
+			path = TrainingAppUITests;
+			sourceTree = "<group>";
+		};
+		C68100F91C80500C0060269B /* TrainingApp */ = {
+			isa = PBXGroup;
+			children = (
+				C68100FA1C80500C0060269B /* AppDelegate.swift */,
+				C68100FB1C80500C0060269B /* Assets.xcassets */,
+				C68100FC1C80500C0060269B /* LaunchScreen.storyboard */,
+				C68100FE1C80500C0060269B /* Main.storyboard */,
+				C68101001C80500C0060269B /* Book.swift */,
+				C68101071C80500C0060269B /* Product.swift */,
+				C68101051C80500C0060269B /* Partner.swift */,
+				C68101011C80500C0060269B /* DetailViewController.swift */,
+				C68101021C80500C0060269B /* Info.plist */,
+				C68101031C80500C0060269B /* LoginViewController.swift */,
+				C68101041C80500C0060269B /* MasterViewController.swift */,
+				C68101061C80500C0060269B /* PartnersViewController.swift */,
+				C68101081C80500C0060269B /* ProductsViewController.swift */,
+			);
+			path = TrainingApp;
 			sourceTree = "<group>";
 		};
 		FA5394E248E7AF387541ADF0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CCA53723B7B210E84D647E3E /* Pods-Bookshelf.debug.xcconfig */,
-				218B9F26CB3273C40F49F4FD /* Pods-Bookshelf.release.xcconfig */,
+				CCA53723B7B210E84D647E3E /* Pods-TrainingApp.debug.xcconfig */,
+				218B9F26CB3273C40F49F4FD /* Pods-TrainingApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -215,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5701AB891C6916A900D7D9BB /* Bookshelf */ = {
+		5701AB891C6916A900D7D9BB /* TrainingApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5701ABB41C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "Bookshelf" */;
+			buildConfigurationList = 5701ABB41C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "TrainingApp" */;
 			buildPhases = (
 				EAF610F5C7CC6F4D3C748873 /* Check Pods Manifest.lock */,
 				5701AB861C6916A900D7D9BB /* Sources */,
@@ -231,14 +231,14 @@
 			);
 			dependencies = (
 			);
-			name = Bookshelf;
-			productName = Bookshelf;
-			productReference = 5701AB8A1C6916A900D7D9BB /* Bookshelf.app */;
+			name = TrainingApp;
+			productName = TrainingApp;
+			productReference = 5701AB8A1C6916A900D7D9BB /* TrainingApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5701AB9F1C6916A900D7D9BB /* BookshelfTests */ = {
+		5701AB9F1C6916A900D7D9BB /* TrainingAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5701ABB71C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "BookshelfTests" */;
+			buildConfigurationList = 5701ABB71C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "TrainingAppTests" */;
 			buildPhases = (
 				5701AB9C1C6916A900D7D9BB /* Sources */,
 				5701AB9D1C6916A900D7D9BB /* Frameworks */,
@@ -249,14 +249,14 @@
 			dependencies = (
 				5701ABA21C6916A900D7D9BB /* PBXTargetDependency */,
 			);
-			name = BookshelfTests;
-			productName = BookshelfTests;
-			productReference = 5701ABA01C6916A900D7D9BB /* BookshelfTests.xctest */;
+			name = TrainingAppTests;
+			productName = TrainingAppTests;
+			productReference = 5701ABA01C6916A900D7D9BB /* TrainingApp.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5701ABAA1C6916A900D7D9BB /* BookshelfUITests */ = {
+		5701ABAA1C6916A900D7D9BB /* TrainingAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5701ABBA1C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "BookshelfUITests" */;
+			buildConfigurationList = 5701ABBA1C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "TrainingAppUITests" */;
 			buildPhases = (
 				5701ABA71C6916A900D7D9BB /* Sources */,
 				5701ABA81C6916A900D7D9BB /* Frameworks */,
@@ -267,9 +267,9 @@
 			dependencies = (
 				5701ABAD1C6916A900D7D9BB /* PBXTargetDependency */,
 			);
-			name = BookshelfUITests;
-			productName = BookshelfUITests;
-			productReference = 5701ABAB1C6916A900D7D9BB /* BookshelfUITests.xctest */;
+			name = TrainingAppUITests;
+			productName = TrainingAppUITests;
+			productReference = 5701ABAB1C6916A900D7D9BB /* TrainingApp.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -295,7 +295,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5701AB851C6916A900D7D9BB /* Build configuration list for PBXProject "Bookshelf" */;
+			buildConfigurationList = 5701AB851C6916A900D7D9BB /* Build configuration list for PBXProject "TrainingApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -308,9 +308,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5701AB891C6916A900D7D9BB /* Bookshelf */,
-				5701AB9F1C6916A900D7D9BB /* BookshelfTests */,
-				5701ABAA1C6916A900D7D9BB /* BookshelfUITests */,
+				5701AB891C6916A900D7D9BB /* TrainingApp */,
+				5701AB9F1C6916A900D7D9BB /* TrainingAppTests */,
+				5701ABAA1C6916A900D7D9BB /* TrainingAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,9 +320,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5701AB9A1C6916A900D7D9BB /* LaunchScreen.storyboard in Resources */,
-				5701AB971C6916A900D7D9BB /* Assets.xcassets in Resources */,
-				5701AB951C6916A900D7D9BB /* Main.storyboard in Resources */,
+				C681010A1C80500C0060269B /* Assets.xcassets in Resources */,
+				C681010C1C80500C0060269B /* Main.storyboard in Resources */,
+				C681010B1C80500C0060269B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bookshelf/Pods-Bookshelf-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrainingApp/Pods-TrainingApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91B3576C6121D4B065E17FBA /* Copy Pods Resources */ = {
@@ -370,7 +370,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bookshelf/Pods-Bookshelf-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrainingApp/Pods-TrainingApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAF610F5C7CC6F4D3C748873 /* Check Pods Manifest.lock */ = {
@@ -395,15 +395,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6D0318B1C7DC8DF00673DAD /* ProductsViewController.swift in Sources */,
-				5701ABC01C69187200D7D9BB /* Book.swift in Sources */,
-				5701AB921C6916A900D7D9BB /* DetailViewController.swift in Sources */,
-				5701AB901C6916A900D7D9BB /* MasterViewController.swift in Sources */,
-				C6D031891C7DB0F600673DAD /* LoginViewController.swift in Sources */,
-				5701AB8E1C6916A900D7D9BB /* AppDelegate.swift in Sources */,
-				C68100EC1C8045C60060269B /* PartnersViewController.swift in Sources */,
-				C68100EE1C8046010060269B /* Partner.swift in Sources */,
-				C6D0318D1C7DE9D600673DAD /* Product.swift in Sources */,
+				C68101121C80500C0060269B /* Partner.swift in Sources */,
+				C681010E1C80500C0060269B /* DetailViewController.swift in Sources */,
+				C68101141C80500C0060269B /* Product.swift in Sources */,
+				C68101151C80500C0060269B /* ProductsViewController.swift in Sources */,
+				C68101131C80500C0060269B /* PartnersViewController.swift in Sources */,
+				C681010D1C80500C0060269B /* Book.swift in Sources */,
+				C68101091C80500C0060269B /* AppDelegate.swift in Sources */,
+				C68101101C80500C0060269B /* LoginViewController.swift in Sources */,
+				C68101111C80500C0060269B /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5701ABA51C6916A900D7D9BB /* BookshelfTests.swift in Sources */,
+				C68100F21C804F540060269B /* TrainingAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5701ABB01C6916A900D7D9BB /* BookshelfUITests.swift in Sources */,
+				C68100F81C804F9F0060269B /* TrainingAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,31 +428,31 @@
 /* Begin PBXTargetDependency section */
 		5701ABA21C6916A900D7D9BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5701AB891C6916A900D7D9BB /* Bookshelf */;
+			target = 5701AB891C6916A900D7D9BB /* TrainingApp */;
 			targetProxy = 5701ABA11C6916A900D7D9BB /* PBXContainerItemProxy */;
 		};
 		5701ABAD1C6916A900D7D9BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5701AB891C6916A900D7D9BB /* Bookshelf */;
+			target = 5701AB891C6916A900D7D9BB /* TrainingApp */;
 			targetProxy = 5701ABAC1C6916A900D7D9BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5701AB931C6916A900D7D9BB /* Main.storyboard */ = {
+		C68100FC1C80500C0060269B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5701AB941C6916A900D7D9BB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5701AB981C6916A900D7D9BB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5701AB991C6916A900D7D9BB /* Base */,
+				C68100FD1C80500C0060269B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C68100FE1C80500C0060269B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C68100FF1C80500C0060269B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -543,33 +543,33 @@
 		};
 		5701ABB51C6916A900D7D9BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCA53723B7B210E84D647E3E /* Pods-Bookshelf.debug.xcconfig */;
+			baseConfigurationReference = CCA53723B7B210E84D647E3E /* Pods-TrainingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Bookshelf/Info.plist;
+				INFOPLIST_FILE = TrainingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.Bookshelf;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingApp;
+				PRODUCT_NAME = TrainingApp;
 			};
 			name = Debug;
 		};
 		5701ABB61C6916A900D7D9BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 218B9F26CB3273C40F49F4FD /* Pods-Bookshelf.release.xcconfig */;
+			baseConfigurationReference = 218B9F26CB3273C40F49F4FD /* Pods-TrainingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Bookshelf/Info.plist;
+				INFOPLIST_FILE = TrainingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.Bookshelf;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingApp;
+				PRODUCT_NAME = TrainingApp;
 			};
 			name = Release;
 		};
@@ -577,11 +577,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BookshelfTests/Info.plist;
+				INFOPLIST_FILE = TrainingAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.BookshelfTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookshelf.app/Bookshelf";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingAppTests;
+				PRODUCT_NAME = TrainingApp;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrainingApp.app/TrainingApp";
 			};
 			name = Debug;
 		};
@@ -589,22 +589,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = BookshelfTests/Info.plist;
+				INFOPLIST_FILE = TrainingAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.BookshelfTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bookshelf.app/Bookshelf";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingAppTests;
+				PRODUCT_NAME = TrainingApp;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrainingApp.app/TrainingApp";
 			};
 			name = Release;
 		};
 		5701ABBB1C6916A900D7D9BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = BookshelfUITests/Info.plist;
+				INFOPLIST_FILE = TrainingAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.BookshelfUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Bookshelf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingAppUITests;
+				PRODUCT_NAME = TrainingApp;
+				TEST_TARGET_NAME = TrainingApp;
 				USES_XCTRUNNER = YES;
 			};
 			name = Debug;
@@ -612,11 +612,11 @@
 		5701ABBC1C6916A900D7D9BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = BookshelfUITests/Info.plist;
+				INFOPLIST_FILE = TrainingAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.BookshelfUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Bookshelf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingAppUITests;
+				PRODUCT_NAME = TrainingApp;
+				TEST_TARGET_NAME = TrainingApp;
 				USES_XCTRUNNER = YES;
 			};
 			name = Release;
@@ -624,7 +624,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5701AB851C6916A900D7D9BB /* Build configuration list for PBXProject "Bookshelf" */ = {
+		5701AB851C6916A900D7D9BB /* Build configuration list for PBXProject "TrainingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5701ABB21C6916A900D7D9BB /* Debug */,
@@ -633,7 +633,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5701ABB41C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "Bookshelf" */ = {
+		5701ABB41C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "TrainingApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5701ABB51C6916A900D7D9BB /* Debug */,
@@ -642,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5701ABB71C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "BookshelfTests" */ = {
+		5701ABB71C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "TrainingAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5701ABB81C6916A900D7D9BB /* Debug */,
@@ -651,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5701ABBA1C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "BookshelfUITests" */ = {
+		5701ABBA1C6916A900D7D9BB /* Build configuration list for PBXNativeTarget "TrainingAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5701ABBB1C6916A900D7D9BB /* Debug */,

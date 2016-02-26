@@ -1,6 +1,6 @@
 //
-//  BookshelfUITests.swift
-//  BookshelfUITests
+//  TrainingAppUITests.swift
+//  TrainingAppUITests
 //
 //  Created by Victor Barros on 2016-02-08.
 //  Copyright © 2016 Kinvey. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class BookshelfUITests: XCTestCase {
+class TrainingAppUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

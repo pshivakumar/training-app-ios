@@ -3,17 +3,17 @@
 inhibit_all_warnings!
 use_frameworks!
 
-target 'Bookshelf' do
+target 'TrainingApp' do
 
 	pod 'SVProgressHUD'
 
 end
 
-target 'BookshelfTests' do
+target 'TrainingAppTests' do
 
 end
 
-target 'BookshelfUITests' do
+target 'TrainingAppUITests' do
 
 end
 

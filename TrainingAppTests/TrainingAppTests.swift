@@ -1,15 +1,15 @@
 //
-//  BookshelfTests.swift
-//  BookshelfTests
+//  TrainingApp.swift
+//  TrainingApp
 //
 //  Created by Victor Barros on 2016-02-08.
 //  Copyright © 2016 Kinvey. All rights reserved.
 //
 
 import XCTest
-@testable import Bookshelf
+@testable import TrainingApp
 
-class BookshelfTests: XCTestCase {
+class TrainingApp: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -1,6 +1,6 @@
 //
 //  PartnersViewController.swift
-//  Bookshelf
+//  TrainingApp
 //
 //  Created by Igor Sapyanik on 24.02.16.
 //  Copyright © 2016 Kinvey. All rights reserved.

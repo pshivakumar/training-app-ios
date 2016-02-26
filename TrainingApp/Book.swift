@@ -1,6 +1,6 @@
 //
-//  Partner.swift
-//  Bookshelf
+//  Book.swift
+//  TrainingApp
 //
 //  Created by Victor Barros on 2016-02-08.
 //  Copyright © 2016 Kinvey. All rights reserved.
@@ -9,28 +9,26 @@
 import Foundation
 import Kinvey
 
-class Partner: NSObject, Persistable {
+class Book: NSObject, Persistable {
     
     dynamic var objectId: String?
-    dynamic var name: String?
-    dynamic var company: String?
+    dynamic var title: String?
     
     override init() {
     }
     
-    init(name: String) {
-        self.name = name
+    init(title: String) {
+        self.title = title
     }
     
     static func kinveyCollectionName() -> String {
-        return "partner"
+        return "Book"
     }
     
     static func kinveyPropertyMapping() -> [String : String] {
         return [
             "objectId" : Kinvey.PersistableIdKey,
-            "name" : "partnername",
-            "company" : "partnercompany"
+            "title" : "title"
         ]
     }
     

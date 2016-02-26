@@ -1,6 +1,6 @@
 //
 //  MasterViewController.swift
-//  Bookshelf
+//  TrainingApp
 //
 //  Created by Victor Barros on 2016-02-08.
 //  Copyright © 2016 Kinvey. All rights reserved.
