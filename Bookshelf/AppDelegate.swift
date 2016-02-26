@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Kinvey.sharedClient.initialize(appKey: "<App Key>", appSecret: "<App Secret>")
+        Kinvey.sharedClient.initialize(appKey: "kid_bJg1ypzual", appSecret: "d5e16c9315274c93920dc14f6ee79f0b")
+        return true
         
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
@@ -28,10 +29,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if let _ = Kinvey.sharedClient.activeUser {
             //do nothing
         } else {
+/*
             SVProgressHUD.show()
-            User.exists(username: "test") { exists, error in
+            User.exists(username: "yegor") { exists, error in
                 if exists {
-                    User.login(username: "test", password: "test") { user, error in
+                    User.login(username: "yegor", password: "1234") { user, error in
+                        SVProgressHUD.dismiss()
+                        if let _ = user {
+                            //do nothing
+                            
+                        } else {
+                            //do something!
+                        }
+                    }
+                }
+*/
+//            let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+//            let loginViewController = mainStoryBoard.instantiateViewControllerWithIdentifier("LoginViewController")
+//            self.window!.rootViewController?.presentViewController(loginViewController, animated: false, completion: nil)
+            
+//            splitViewController.performSegueWithIdentifier("MainToLogin", sender: nil)
+            
+/*
+            SVProgressHUD.show()
+            User.exists(username: "yegor") { exists, error in
+                if exists {
+                    User.login(username: "yegor", password: "1234") { user, error in
                         SVProgressHUD.dismiss()
                         if let _ = user {
                             //do nothing
@@ -40,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                         }
                     }
                 } else {
-                    User.signup(username: "test", password: "test") { user, error in
+                    User.signup(username: "yegor", password: "1234") { user, error in
                         SVProgressHUD.dismiss()
                         if let _ = user {
                             //do nothing
@@ -50,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                     }
                 }
             }
+*/
         }
         
         return true

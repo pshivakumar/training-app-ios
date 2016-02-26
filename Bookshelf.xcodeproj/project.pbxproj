@@ -27,6 +27,11 @@
 		574F62741C6B2B6800765760 /* Kinvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; };
 		574F62761C6B2C8800765760 /* Kinvey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B7F18C5F8317F29928DB0ED /* Pods_Bookshelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEA6D6C2FCD9E9E3719916D /* Pods_Bookshelf.framework */; };
+		C68100EC1C8045C60060269B /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100EB1C8045C60060269B /* PartnersViewController.swift */; };
+		C68100EE1C8046010060269B /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100ED1C8046010060269B /* Partner.swift */; };
+		C6D031891C7DB0F600673DAD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D031881C7DB0F600673DAD /* LoginViewController.swift */; };
+		C6D0318B1C7DC8DF00673DAD /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D0318A1C7DC8DF00673DAD /* ProductsViewController.swift */; };
+		C6D0318D1C7DE9D600673DAD /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D0318C1C7DE9D600673DAD /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,11 @@
 		574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
 		574B0F9D1C6EA46100CDC48F /* MongoDBPredicateAdaptorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MongoDBPredicateAdaptorKit.framework; sourceTree = "<group>"; };
 		574F62731C6B2B6800765760 /* Kinvey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kinvey.framework; sourceTree = "<group>"; };
+		C68100EB1C8045C60060269B /* PartnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
+		C68100ED1C8046010060269B /* Partner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partner.swift; sourceTree = "<group>"; };
+		C6D031881C7DB0F600673DAD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C6D0318A1C7DC8DF00673DAD /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		C6D0318C1C7DE9D600673DAD /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		CCA53723B7B210E84D647E3E /* Pods-Bookshelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookshelf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bookshelf/Pods-Bookshelf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				5701AB8D1C6916A900D7D9BB /* AppDelegate.swift */,
+				C6D031881C7DB0F600673DAD /* LoginViewController.swift */,
+				C6D0318A1C7DC8DF00673DAD /* ProductsViewController.swift */,
+				C68100EB1C8045C60060269B /* PartnersViewController.swift */,
 				5701AB8F1C6916A900D7D9BB /* MasterViewController.swift */,
 				5701AB911C6916A900D7D9BB /* DetailViewController.swift */,
 				5701AB931C6916A900D7D9BB /* Main.storyboard */,
@@ -158,6 +171,8 @@
 				5701AB981C6916A900D7D9BB /* LaunchScreen.storyboard */,
 				5701AB9B1C6916A900D7D9BB /* Info.plist */,
 				5701ABBF1C69187200D7D9BB /* Book.swift */,
+				C6D0318C1C7DE9D600673DAD /* Product.swift */,
+				C68100ED1C8046010060269B /* Partner.swift */,
 			);
 			path = Bookshelf;
 			sourceTree = "<group>";
@@ -380,10 +395,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D0318B1C7DC8DF00673DAD /* ProductsViewController.swift in Sources */,
 				5701ABC01C69187200D7D9BB /* Book.swift in Sources */,
 				5701AB921C6916A900D7D9BB /* DetailViewController.swift in Sources */,
 				5701AB901C6916A900D7D9BB /* MasterViewController.swift in Sources */,
+				C6D031891C7DB0F600673DAD /* LoginViewController.swift in Sources */,
 				5701AB8E1C6916A900D7D9BB /* AppDelegate.swift in Sources */,
+				C68100EC1C8045C60060269B /* PartnersViewController.swift in Sources */,
+				C68100EE1C8046010060269B /* Partner.swift in Sources */,
+				C6D0318D1C7DE9D600673DAD /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
