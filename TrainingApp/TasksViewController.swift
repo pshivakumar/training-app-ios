@@ -8,7 +8,7 @@
 
 import UIKit
 import Kinvey
-
+import SVProgressHUD
 class TasksViewController: UITableViewController {
 
     
@@ -24,24 +24,21 @@ class TasksViewController: UITableViewController {
 
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: "reloadData", forControlEvents: .ValueChanged)
-        
-        if Kinvey.sharedClient.activeUser == nil {
-            self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
-        }
+        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if Kinvey.sharedClient.activeUser != nil && tasks.count == 0 {
-            reloadData()
+        if Kinvey.sharedClient.activeUser != nil {
+            loadDataFromCache()
         }
     }
-    
-    func reloadData() {
-        self.refreshControl?.beginRefreshing()
+
+    func loadDataFromServer() {
+        
         do {
+            self.refreshControl?.beginRefreshing()
             try store.pull() { (tasks, error) -> Void in
                 self.refreshControl?.endRefreshing()
                 if let tasks = tasks {
@@ -57,7 +54,31 @@ class TasksViewController: UITableViewController {
             
         }
     }
+    
+    func loadDataFromCache(query:Query = Query()) {
+        
+        store.find(query) { (tasks, error) -> Void in
+            if let tasks = tasks {
+                self.tasks = tasks
+                self.tableView.reloadData()
+            }
+        }
+    }
 
+    @IBAction func tappedPush(sender: AnyObject) {
+        
+        SVProgressHUD.show()
+        try! store.push { (count, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                SVProgressHUD.dismiss()
+                if (error != nil) {
+                    let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+                    self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                }
+            })
+        }
+    }
+    
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
@@ -75,14 +96,15 @@ class TasksViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")! as! TaskCell
 
         // Configure the cell...
         if indexPath.row < tasks.count {
             let task = tasks[indexPath.row]
             
-            cell.textLabel?.text = task.action
-//            cell.detailTextLabel?.text = product.productDescription
+            cell.actionLabel?.text = task.action
+            cell.dueDateLabel?.text = task.dueDate
+            cell.completeLabel?.text = "\(task.completed)"
         }
 
         return cell
@@ -97,11 +119,30 @@ class TasksViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            if indexPath.row < tasks.count {
+                
+                let product = tasks[indexPath.row]
+                tasks.removeAtIndex(indexPath.row)
+                
+                if let _ = product.objectId {
+                    
+                    SVProgressHUD.show()
+                    store.removeById(product.objectId!, completionHandler: { (count, error) -> Void in
+                        
+                        SVProgressHUD.dismiss()
+                        
+                        if (error != nil) {
+                            let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+                            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                        }
+                    })
+                }
+            }
+            
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
     /*
@@ -119,14 +160,27 @@ class TasksViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        guard let cell = sender as? TaskCell else {
+            return
+        }
+        
+        guard let taskDetailsViewController = segue.destinationViewController as? TaskDetailsViewController else {
+            return
+        }
+        
+        guard let indexPath = self.tableView.indexPathForCell(cell) where indexPath.row < tasks.count else {
+            return
+        }
+        
+        let task = tasks[indexPath.row]
+        taskDetailsViewController.task = task
+
     }
-    */
 
 }

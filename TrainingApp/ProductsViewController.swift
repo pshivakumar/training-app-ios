@@ -91,20 +91,15 @@ class ProductsViewController: UITableViewController {
     
     @IBAction func tappedPush(sender: AnyObject) {
         
-        do {
-            SVProgressHUD.show()
-            try store.push { (count, error) -> Void in
+        SVProgressHUD.show()
+        try! store.push { (count, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 SVProgressHUD.dismiss()
                 if (error != nil) {
                     let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
                     self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
                 }
-            }
-        }
-        catch _ {
-            SVProgressHUD.dismiss()
-            let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
-            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+            })
         }
     }
     
@@ -154,23 +149,17 @@ class ProductsViewController: UITableViewController {
                         
                         SVProgressHUD.dismiss()
                         
-//                        self.store.push({ (count, error) -> Void in
-                            if (error != nil) {
-                                let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
-                                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-                            }
-
-//                        })
-                        
+                        if (error != nil) {
+                            let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+                            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                        }
                     })
                 }
             }
             
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
     /*
