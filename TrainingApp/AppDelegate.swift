@@ -8,7 +8,6 @@
 
 import UIKit
 import Kinvey
-import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {

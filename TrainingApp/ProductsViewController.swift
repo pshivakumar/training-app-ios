@@ -8,15 +8,17 @@
 
 import UIKit
 import Kinvey
+import SVProgressHUD
 
 class ProductsViewController: UITableViewController {
 
     
     var products = [Product]()
+    var sordAscending = false
+    
     
     lazy var store: DataStore<Product>! = {
-        //Create a DataStore of type "Sync"
-        return DataStore<Product>.getInstance(.Sync)
+        return DataStore<Product>.getInstance()
     }()
     
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class ProductsViewController: UITableViewController {
 
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: "reloadDataFromServer", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
         
         if Kinvey.sharedClient.activeUser == nil {
             self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
@@ -35,16 +37,11 @@ class ProductsViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         if Kinvey.sharedClient.activeUser != nil {
-            if products.count == 0 {
-                reloadDataFromServer()
-            }
-            else {
-                reloadDataFromCache()
-            }
+            loadDataFromCache()
         }
     }
     
-    func reloadDataFromServer() {
+    func loadDataFromServer() {
 
         do {
             self.refreshControl?.beginRefreshing()
@@ -64,9 +61,9 @@ class ProductsViewController: UITableViewController {
         }
     }
     
-    func reloadDataFromCache() {
+    func loadDataFromCache(query:Query = Query()) {
         
-        store.find { (products, error) -> Void in
+        store.find(query) { (products, error) -> Void in
             if let products = products {
                 self.products = products
                 self.tableView.reloadData()
@@ -78,6 +75,37 @@ class ProductsViewController: UITableViewController {
         super.setEditing(editing, animated: animated)
         
         self.refreshControl?.enabled = !editing;
+    }
+    
+    //MARK: - IB Actions
+    @IBAction func tappedSort(sender: AnyObject) {
+
+        let predicate = NSPredicate(value: true)
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: sordAscending)
+        let query = Query(predicate:predicate, sortDescriptors:[sortDescriptor])
+
+        loadDataFromCache(query)
+        
+        sordAscending = !sordAscending
+    }
+    
+    @IBAction func tappedPush(sender: AnyObject) {
+        
+        do {
+            SVProgressHUD.show()
+            try store.push { (count, error) -> Void in
+                SVProgressHUD.dismiss()
+                if (error != nil) {
+                    let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+                    self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                }
+            }
+        }
+        catch _ {
+            SVProgressHUD.dismiss()
+            let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+        }
     }
     
     // MARK: - Table view data source
@@ -113,6 +141,31 @@ class ProductsViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            if indexPath.row < products.count {
+                
+                let product = products[indexPath.row]
+                products.removeAtIndex(indexPath.row)
+                
+                if let _ = product.objectId {
+                    
+                    SVProgressHUD.show()
+                    store.removeById(product.objectId!, completionHandler: { (count, error) -> Void in
+                        
+                        SVProgressHUD.dismiss()
+                        
+//                        self.store.push({ (count, error) -> Void in
+                            if (error != nil) {
+                                let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+                                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                            }
+
+//                        })
+                        
+                    })
+                }
+            }
+            
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {

@@ -299,13 +299,30 @@
         <scene sceneID="Pu5-kv-JcF">
             <objects>
                 <tableViewController id="1cl-MF-NSr" customClass="ProductsViewController" customModule="TrainingApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BdA-7Q-Vgj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="BdA-7Q-Vgj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableHeaderView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MZA-GZ-pgF">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Push" id="5Ux-ee-8El">
+                                    <connections>
+                                        <action selector="tappedPush:" destination="1cl-MF-NSr" id="HBT-hE-nUi"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="KMM-h7-HEy"/>
+                                <barButtonItem title="Sort" id="nya-iF-dGD">
+                                    <connections>
+                                        <action selector="tappedSort:" destination="1cl-MF-NSr" id="dHq-1z-hWj"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="b90-jN-WKR" detailTextLabel="kbD-Xt-fPT" style="IBUITableViewCellStyleSubtitle" id="XpA-CM-cyc">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XpA-CM-cyc" id="jO4-NL-fqP">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>

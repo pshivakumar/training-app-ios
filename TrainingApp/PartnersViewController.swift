@@ -35,12 +35,7 @@ class PartnersViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         if Kinvey.sharedClient.activeUser != nil {
-            if partners.count == 0 {
-                reloadDataFromServer()
-            }
-            else {
-                reloadDataFromCache()
-            }
+            reloadDataFromCache()
         }
     }
     
