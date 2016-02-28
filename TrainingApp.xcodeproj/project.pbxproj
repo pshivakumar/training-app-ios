@@ -21,6 +21,7 @@
 		C667CF621C805643007B7567 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF611C805643007B7567 /* TasksViewController.swift */; };
 		C667CF641C83499A007B7567 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF631C83499A007B7567 /* TaskCell.swift */; };
 		C667CF661C834F49007B7567 /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF651C834F49007B7567 /* TaskDetailsViewController.swift */; };
+		C667CF681C835970007B7567 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF671C835970007B7567 /* AddTaskViewController.swift */; };
 		C68100F21C804F540060269B /* TrainingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100F01C804F540060269B /* TrainingAppTests.swift */; };
 		C68100F81C804F9F0060269B /* TrainingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100F61C804F9F0060269B /* TrainingAppUITests.swift */; };
 		C68101091C80500C0060269B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68100FA1C80500C0060269B /* AppDelegate.swift */; };
@@ -28,9 +29,7 @@
 		C681010B1C80500C0060269B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68100FC1C80500C0060269B /* LaunchScreen.storyboard */; };
 		C681010C1C80500C0060269B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68100FE1C80500C0060269B /* Main.storyboard */; };
 		C681010D1C80500C0060269B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101001C80500C0060269B /* Book.swift */; };
-		C681010E1C80500C0060269B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101011C80500C0060269B /* DetailViewController.swift */; };
 		C68101101C80500C0060269B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101031C80500C0060269B /* LoginViewController.swift */; };
-		C68101111C80500C0060269B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101041C80500C0060269B /* MasterViewController.swift */; };
 		C68101121C80500C0060269B /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101051C80500C0060269B /* Partner.swift */; };
 		C68101131C80500C0060269B /* PartnersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101061C80500C0060269B /* PartnersViewController.swift */; };
 		C68101141C80500C0060269B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68101071C80500C0060269B /* Product.swift */; };
@@ -87,6 +86,7 @@
 		C667CF611C805643007B7567 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C667CF631C83499A007B7567 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		C667CF651C834F49007B7567 /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		C667CF671C835970007B7567 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		C68100F01C804F540060269B /* TrainingAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingAppTests.swift; sourceTree = "<group>"; };
 		C68100F11C804F540060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68100F51C804F9F0060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,10 +96,8 @@
 		C68100FD1C80500C0060269B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C68100FF1C80500C0060269B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C68101001C80500C0060269B /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		C68101011C80500C0060269B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C68101021C80500C0060269B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68101031C80500C0060269B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C68101041C80500C0060269B /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		C68101051C80500C0060269B /* Partner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partner.swift; sourceTree = "<group>"; };
 		C68101061C80500C0060269B /* PartnersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnersViewController.swift; sourceTree = "<group>"; };
 		C68101071C80500C0060269B /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -202,15 +200,14 @@
 				C68101071C80500C0060269B /* Product.swift */,
 				C68101051C80500C0060269B /* Partner.swift */,
 				C667CF5F1C80542E007B7567 /* Task.swift */,
-				C68101011C80500C0060269B /* DetailViewController.swift */,
 				C68101021C80500C0060269B /* Info.plist */,
 				C68101031C80500C0060269B /* LoginViewController.swift */,
-				C68101041C80500C0060269B /* MasterViewController.swift */,
 				C68101061C80500C0060269B /* PartnersViewController.swift */,
 				C68101081C80500C0060269B /* ProductsViewController.swift */,
-				C667CF611C805643007B7567 /* TasksViewController.swift */,
 				C667CF631C83499A007B7567 /* TaskCell.swift */,
+				C667CF611C805643007B7567 /* TasksViewController.swift */,
 				C667CF651C834F49007B7567 /* TaskDetailsViewController.swift */,
+				C667CF671C835970007B7567 /* AddTaskViewController.swift */,
 			);
 			path = TrainingApp;
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C68101121C80500C0060269B /* Partner.swift in Sources */,
-				C681010E1C80500C0060269B /* DetailViewController.swift in Sources */,
 				C68101141C80500C0060269B /* Product.swift in Sources */,
 				C68101151C80500C0060269B /* ProductsViewController.swift in Sources */,
 				C667CF661C834F49007B7567 /* TaskDetailsViewController.swift in Sources */,
@@ -419,7 +415,7 @@
 				C68101101C80500C0060269B /* LoginViewController.swift in Sources */,
 				C667CF601C80542E007B7567 /* Task.swift in Sources */,
 				C667CF621C805643007B7567 /* TasksViewController.swift in Sources */,
-				C68101111C80500C0060269B /* MasterViewController.swift in Sources */,
+				C667CF681C835970007B7567 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

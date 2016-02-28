@@ -162,25 +162,26 @@ class TasksViewController: UITableViewController {
 
     // MARK: - Navigation
 
+    @IBAction func returnToTaskViewController(segue: UIStoryboardSegue) {
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        guard let cell = sender as? TaskCell else {
-            return
-        }
-        
-        guard let taskDetailsViewController = segue.destinationViewController as? TaskDetailsViewController else {
-            return
-        }
-        
-        guard let indexPath = self.tableView.indexPathForCell(cell) where indexPath.row < tasks.count else {
-            return
-        }
-        
-        let task = tasks[indexPath.row]
-        taskDetailsViewController.task = task
 
+        if let taskDetailsViewController = segue.destinationViewController as? TaskDetailsViewController {
+            guard let cell = sender as? TaskCell else {
+                return
+            }
+            
+            
+            guard let indexPath = self.tableView.indexPathForCell(cell) where indexPath.row < tasks.count else {
+                return
+            }
+            
+            let task = tasks[indexPath.row]
+            taskDetailsViewController.task = task
+        }
     }
 
 }

@@ -422,13 +422,17 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
+                                <barButtonItem systemItem="add" id="gnM-CD-csj">
+                                    <connections>
+                                        <segue destination="Oj4-ae-zIx" kind="presentation" id="nnV-hg-zPf"/>
+                                    </connections>
+                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="mtt-ke-OPW"/>
                                 <barButtonItem title="Push" id="VKg-wz-SZt">
                                     <connections>
                                         <action selector="tappedPush:" destination="ZOt-RE-cQ9" id="99S-YY-FXc"/>
                                     </connections>
                                 </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="XT0-ok-Y2S"/>
                             </items>
                         </toolbar>
                         <prototypes>
@@ -580,7 +584,98 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06Z-aV-CFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="2590"/>
+            <point key="canvasLocation" x="1256" y="2142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Vk-63-fxh">
+            <objects>
+                <navigationController id="Oj4-ae-zIx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="utH-fH-7Jk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="K40-en-Vlc" kind="relationship" relationship="rootViewController" id="r0U-0x-Umt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qu-P4-eL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="2937"/>
+        </scene>
+        <!--Add Task-->
+        <scene sceneID="jai-CM-igC">
+            <objects>
+                <viewController id="K40-en-Vlc" customClass="AddTaskViewController" customModule="TrainingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RrF-Vc-Fep"/>
+                        <viewControllerLayoutGuide type="bottom" id="gPi-yD-Ati"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N3I-ZN-JTX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type action here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whK-og-aYe">
+                                <rect key="frame" x="20" y="85" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="editingChangedForTextField:" destination="K40-en-Vlc" eventType="editingChanged" id="b51-RE-jxT"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6t-e4-mS4">
+                                <rect key="frame" x="435" y="136" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pjd-tr-imf">
+                                <rect key="frame" x="531" y="131" width="51" height="31"/>
+                            </switch>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-YR-wDX">
+                                <rect key="frame" x="0.0" y="180" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="478370863.87339598">
+                                    <!--2016-02-28 16:47:43 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pjd-tr-imf" firstAttribute="top" secondItem="whK-og-aYe" secondAttribute="bottom" constant="16" id="1gU-eu-PQH"/>
+                            <constraint firstItem="pjd-tr-imf" firstAttribute="trailing" secondItem="N3I-ZN-JTX" secondAttribute="trailingMargin" id="3v4-QN-4tO"/>
+                            <constraint firstItem="D6t-e4-mS4" firstAttribute="centerY" secondItem="pjd-tr-imf" secondAttribute="centerY" id="5Vm-Tp-erZ"/>
+                            <constraint firstItem="pjd-tr-imf" firstAttribute="leading" secondItem="D6t-e4-mS4" secondAttribute="trailing" constant="11" id="Bdo-d2-Ofb"/>
+                            <constraint firstItem="zkz-YR-wDX" firstAttribute="leading" secondItem="N3I-ZN-JTX" secondAttribute="leading" id="HEK-lM-ddV"/>
+                            <constraint firstItem="whK-og-aYe" firstAttribute="top" secondItem="RrF-Vc-Fep" secondAttribute="bottom" constant="21" id="PHb-2y-Znc"/>
+                            <constraint firstItem="whK-og-aYe" firstAttribute="leading" secondItem="N3I-ZN-JTX" secondAttribute="leadingMargin" id="b43-3W-rGP"/>
+                            <constraint firstItem="pjd-tr-imf" firstAttribute="top" secondItem="whK-og-aYe" secondAttribute="bottom" constant="16" id="bl5-X8-Acf"/>
+                            <constraint firstItem="whK-og-aYe" firstAttribute="trailing" secondItem="N3I-ZN-JTX" secondAttribute="trailingMargin" id="cNt-KB-bzV"/>
+                            <constraint firstAttribute="trailing" secondItem="zkz-YR-wDX" secondAttribute="trailing" id="gho-71-NoD"/>
+                            <constraint firstItem="zkz-YR-wDX" firstAttribute="top" secondItem="pjd-tr-imf" secondAttribute="bottom" constant="18" id="xJL-DK-hLt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Task" id="yxL-nV-AMb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="V7F-8l-Rt8">
+                            <connections>
+                                <segue destination="cuc-Y4-HKY" kind="unwind" unwindAction="returnToTaskViewController:" id="vDe-rE-uDo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9go-69-inv">
+                            <connections>
+                                <action selector="tappedSave:" destination="K40-en-Vlc" id="v9l-xf-1sv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actionField" destination="whK-og-aYe" id="BvU-IQ-ekc"/>
+                        <outlet property="completedSwitch" destination="pjd-tr-imf" id="XQk-nO-5jY"/>
+                        <outlet property="dueDatePicker" destination="zkz-YR-wDX" id="abu-Pe-s0M"/>
+                        <outlet property="saveButtonItem" destination="9go-69-inv" id="cqR-8l-njn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZuJ-7U-irU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cuc-Y4-HKY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1696" y="2937"/>
         </scene>
         <!--ToDos-->
         <scene sceneID="y7h-xl-2AN">
