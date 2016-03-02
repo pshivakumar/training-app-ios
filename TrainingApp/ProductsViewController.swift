@@ -31,12 +31,17 @@ class ProductsViewController: UITableViewController {
         if Kinvey.sharedClient.activeUser == nil {
             self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
         }
+        else {
+            loadDataFromServer()
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadDataFromServer", name: LoginViewController.didLoginNotificationName, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if Kinvey.sharedClient.activeUser != nil {
+        if Kinvey.sharedClient.activeUser != nil && self.refreshControl?.refreshing == false {
             loadDataFromCache()
         }
     }

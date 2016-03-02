@@ -12,6 +12,8 @@ import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
+    static let didLoginNotificationName = "didLoginNotificationName"
+    
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -37,6 +39,9 @@ class LoginViewController: UIViewController {
         User.login(username: login, password: password) { user, error in
             SVProgressHUD.dismiss()
             if let _ = user {
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
+                
                 //do nothing
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

@@ -25,12 +25,14 @@ class TasksViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
+        
+        loadDataFromServer()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if Kinvey.sharedClient.activeUser != nil {
+        if Kinvey.sharedClient.activeUser != nil && self.refreshControl?.refreshing == false {
             loadDataFromCache()
         }
     }

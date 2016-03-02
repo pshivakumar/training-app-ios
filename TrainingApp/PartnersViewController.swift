@@ -24,22 +24,20 @@ class PartnersViewController: UITableViewController {
         
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: "reloadDataFromServer", forControlEvents: .ValueChanged)
-        
-        if Kinvey.sharedClient.activeUser == nil {
-            self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
-        }
+        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
+
+        loadDataFromServer()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if Kinvey.sharedClient.activeUser != nil {
-            reloadDataFromCache()
+        if Kinvey.sharedClient.activeUser != nil && self.refreshControl?.refreshing == false {
+            loadDataFromCache()
         }
     }
     
-    func reloadDataFromServer() {
+    func loadDataFromServer() {
         
         do {
             self.refreshControl?.beginRefreshing()
@@ -59,7 +57,7 @@ class PartnersViewController: UITableViewController {
         }
     }
     
-    func reloadDataFromCache() {
+    func loadDataFromCache() {
         
         store.find { (partners, error) -> Void in
             if let partners = partners {
