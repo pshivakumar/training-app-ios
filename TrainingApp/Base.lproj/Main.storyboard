@@ -500,7 +500,7 @@
             </objects>
             <point key="canvasLocation" x="-761" y="2588"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Collateral-->
         <scene sceneID="agk-RF-3iw">
             <objects>
                 <tableViewController id="qle-gY-kun" sceneMemberID="viewController">
@@ -523,17 +523,17 @@
                             <outlet property="delegate" destination="qle-gY-kun" id="hDg-LZ-b54"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="9Vl-lY-Xtp"/>
+                    <navigationItem key="navigationItem" title="Collateral" id="9Vl-lY-Xtp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqi-wa-QH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="59" y="3370"/>
         </scene>
-        <!--Collaterals-->
+        <!--Collateral-->
         <scene sceneID="TCb-vF-LAn">
             <objects>
                 <navigationController id="Sba-dw-ipk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collaterals" id="HtX-pg-BWI"/>
+                    <tabBarItem key="tabBarItem" title="Collateral" id="HtX-pg-BWI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cw0-2B-2W7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
