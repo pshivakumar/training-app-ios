@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fNY-ZL-p9B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fNY-ZL-p9B">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -503,19 +503,22 @@
         <!--Collateral-->
         <scene sceneID="agk-RF-3iw">
             <objects>
-                <tableViewController id="qle-gY-kun" sceneMemberID="viewController">
+                <tableViewController id="qle-gY-kun" customClass="CollateralsViewController" customModule="TrainingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J17-R2-YfF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Lry-BR-kTe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="Lry-BR-kTe">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lry-BR-kTe" id="ipL-gA-Paz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="PoU-dy-c1c" kind="show" id="OII-h8-gi4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -524,10 +527,46 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Collateral" id="9Vl-lY-Xtp"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="tMt-rT-Kyy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqi-wa-QH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="3370"/>
+            <point key="canvasLocation" x="59" y="3700"/>
+        </scene>
+        <!--File Preview View Controller-->
+        <scene sceneID="TS6-Q9-JsA">
+            <objects>
+                <viewController id="PoU-dy-c1c" customClass="FilePreviewViewController" customModule="TrainingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ico-0c-tgR"/>
+                        <viewControllerLayoutGuide type="bottom" id="wVh-A5-2RJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vQp-5W-oHY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-LD-RLc">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gcK-LD-RLc" firstAttribute="leading" secondItem="vQp-5W-oHY" secondAttribute="leading" id="1cX-JB-qjG"/>
+                            <constraint firstItem="wVh-A5-2RJ" firstAttribute="top" secondItem="gcK-LD-RLc" secondAttribute="bottom" id="7CD-5s-6wH"/>
+                            <constraint firstAttribute="trailing" secondItem="gcK-LD-RLc" secondAttribute="trailing" id="Mrg-2O-ftd"/>
+                            <constraint firstItem="gcK-LD-RLc" firstAttribute="top" secondItem="Ico-0c-tgR" secondAttribute="bottom" id="PAn-aK-qES"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="gcK-LD-RLc" id="FA9-62-tnx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ila-Tu-z4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816" y="3700"/>
         </scene>
         <!--Collateral-->
         <scene sceneID="TCb-vF-LAn">
@@ -544,7 +583,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW7-8K-WEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="3370"/>
+            <point key="canvasLocation" x="-761" y="3700"/>
         </scene>
         <!--Partners-->
         <scene sceneID="wsQ-cO-X0c">

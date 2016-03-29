@@ -17,6 +17,8 @@
 		574B0FA11C6EA4D900CDC48F /* PromiseKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		574F62741C6B2B6800765760 /* Kinvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; };
 		574F62761C6B2C8800765760 /* Kinvey.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 574F62731C6B2B6800765760 /* Kinvey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E8E20C1CAAE88200F2E0BE /* CollateralsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8E20B1CAAE88200F2E0BE /* CollateralsViewController.swift */; };
+		84E936481CAB0AEF002F4BF8 /* FilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E936471CAB0AEF002F4BF8 /* FilePreviewViewController.swift */; };
 		C667CF601C80542E007B7567 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF5F1C80542E007B7567 /* Task.swift */; };
 		C667CF621C805643007B7567 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF611C805643007B7567 /* TasksViewController.swift */; };
 		C667CF641C83499A007B7567 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C667CF631C83499A007B7567 /* TaskCell.swift */; };
@@ -82,6 +84,8 @@
 		574B0F9A1C6EA44500CDC48F /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
 		574B0F9D1C6EA46100CDC48F /* MongoDBPredicateAdaptorKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MongoDBPredicateAdaptorKit.framework; sourceTree = "<group>"; };
 		574F62731C6B2B6800765760 /* Kinvey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kinvey.framework; sourceTree = "<group>"; };
+		84E8E20B1CAAE88200F2E0BE /* CollateralsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollateralsViewController.swift; sourceTree = "<group>"; };
+		84E936471CAB0AEF002F4BF8 /* FilePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePreviewViewController.swift; sourceTree = "<group>"; };
 		C667CF5F1C80542E007B7567 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C667CF611C805643007B7567 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C667CF631C83499A007B7567 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				C667CF611C805643007B7567 /* TasksViewController.swift */,
 				C667CF651C834F49007B7567 /* TaskDetailsViewController.swift */,
 				C667CF671C835970007B7567 /* AddTaskViewController.swift */,
+				84E8E20B1CAAE88200F2E0BE /* CollateralsViewController.swift */,
+				84E936471CAB0AEF002F4BF8 /* FilePreviewViewController.swift */,
 			);
 			path = TrainingApp;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C68101121C80500C0060269B /* Partner.swift in Sources */,
+				84E8E20C1CAAE88200F2E0BE /* CollateralsViewController.swift in Sources */,
 				C68101141C80500C0060269B /* Product.swift in Sources */,
 				C68101151C80500C0060269B /* ProductsViewController.swift in Sources */,
 				C667CF661C834F49007B7567 /* TaskDetailsViewController.swift in Sources */,
@@ -416,6 +423,7 @@
 				C667CF601C80542E007B7567 /* Task.swift in Sources */,
 				C667CF621C805643007B7567 /* TasksViewController.swift in Sources */,
 				C667CF681C835970007B7567 /* AddTaskViewController.swift in Sources */,
+				84E936481CAB0AEF002F4BF8 /* FilePreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
