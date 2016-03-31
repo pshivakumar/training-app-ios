@@ -55,6 +55,8 @@ class TaskDetailsViewController: UIViewController {
             }
             else {
                 let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
                 self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
             }
         }

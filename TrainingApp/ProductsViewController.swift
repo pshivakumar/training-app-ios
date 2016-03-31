@@ -18,7 +18,7 @@ class ProductsViewController: UITableViewController {
     
     
     lazy var store: DataStore<Product>! = {
-        return DataStore<Product>.getInstance()
+        return DataStore<Product>.getInstance(.Sync)
     }()
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class ProductsViewController: UITableViewController {
 
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadDataFromServer), forControlEvents: .ValueChanged)
         
         if Kinvey.sharedClient.activeUser == nil {
             self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
@@ -35,7 +35,7 @@ class ProductsViewController: UITableViewController {
             loadDataFromServer()
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadDataFromServer", name: LoginViewController.didLoginNotificationName, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loadDataFromServer), name: LoginViewController.didLoginNotificationName, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -47,22 +47,16 @@ class ProductsViewController: UITableViewController {
     }
     
     func loadDataFromServer() {
-
-        do {
-            self.refreshControl?.beginRefreshing()
-            try store.pull() { (products, error) -> Void in
-                self.refreshControl?.endRefreshing()
-                if let products = products {
-                    self.products = products
-                    if self.refreshControl?.refreshing ?? false {
-                        self.refreshControl?.endRefreshing()
-                    }
-                    self.tableView.reloadData()
+        self.refreshControl?.beginRefreshing()
+        store.pull() { (products, error) -> Void in
+            self.refreshControl?.endRefreshing()
+            if let products = products {
+                self.products = products
+                if self.refreshControl?.refreshing ?? false {
+                    self.refreshControl?.endRefreshing()
                 }
+                self.tableView.reloadData()
             }
-        }
-        catch {
-            
         }
     }
     
@@ -97,14 +91,14 @@ class ProductsViewController: UITableViewController {
     @IBAction func tappedPush(sender: AnyObject) {
         
         SVProgressHUD.show()
-        try! store.push { (count, error) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                SVProgressHUD.dismiss()
-                if (error != nil) {
-                    let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
-                    self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-                }
-            })
+        store.sync() { (count, products, error) -> Void in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+            }
         }
     }
     
@@ -156,6 +150,8 @@ class ProductsViewController: UITableViewController {
                         
                         if (error != nil) {
                             let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            alert.addAction(defaultAction)
                             self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
                         }
                     })

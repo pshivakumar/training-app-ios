@@ -23,7 +23,7 @@ class CollateralsViewController: UITableViewController {
         super.viewDidLoad()
         
         self.clearsSelectionOnViewWillAppear = true
-        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadDataFromServer), forControlEvents: .ValueChanged)
         loadDataFromServer()
     }
     

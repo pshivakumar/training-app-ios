@@ -23,7 +23,7 @@ class PartnersViewController: UITableViewController {
         super.viewDidLoad()
         
         self.clearsSelectionOnViewWillAppear = false
-        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadDataFromServer), forControlEvents: .ValueChanged)
 
         loadDataFromServer()
     }
@@ -38,22 +38,18 @@ class PartnersViewController: UITableViewController {
     
     func loadDataFromServer() {
         
-        do {
-            self.refreshControl?.beginRefreshing()
-            try store.pull() { (partners, error) -> Void in
-                self.refreshControl?.endRefreshing()
-                if let partners = partners {
-                    self.partners = partners
-                    if self.refreshControl?.refreshing ?? false {
-                        self.refreshControl?.endRefreshing()
-                    }
-                    self.tableView.reloadData()
+        self.refreshControl?.beginRefreshing()
+        store.pull() { (partners, error) -> Void in
+            self.refreshControl?.endRefreshing()
+            if let partners = partners {
+                self.partners = partners
+                if self.refreshControl?.refreshing ?? false {
+                    self.refreshControl?.endRefreshing()
                 }
+                self.tableView.reloadData()
             }
         }
-        catch {
-            
-        }
+        
     }
     
     func loadDataFromCache() {

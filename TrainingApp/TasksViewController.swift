@@ -24,7 +24,7 @@ class TasksViewController: UITableViewController {
 
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.refreshControl?.addTarget(self, action: "loadDataFromServer", forControlEvents: .ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadDataFromServer), forControlEvents: .ValueChanged)
         
         loadDataFromServer()
     }
@@ -39,21 +39,16 @@ class TasksViewController: UITableViewController {
 
     func loadDataFromServer() {
         
-        do {
-            self.refreshControl?.beginRefreshing()
-            try store.pull() { (tasks, error) -> Void in
-                self.refreshControl?.endRefreshing()
-                if let tasks = tasks {
-                    self.tasks = tasks
-                    if self.refreshControl?.refreshing ?? false {
-                        self.refreshControl?.endRefreshing()
-                    }
-                    self.tableView.reloadData()
+        self.refreshControl?.beginRefreshing()
+        store.pull() { (tasks, error) -> Void in
+            self.refreshControl?.endRefreshing()
+            if let tasks = tasks {
+                self.tasks = tasks
+                if self.refreshControl?.refreshing ?? false {
+                    self.refreshControl?.endRefreshing()
                 }
+                self.tableView.reloadData()
             }
-        }
-        catch {
-            
         }
     }
     
@@ -70,14 +65,14 @@ class TasksViewController: UITableViewController {
     @IBAction func tappedPush(sender: AnyObject) {
         
         SVProgressHUD.show()
-        try! store.push { (count, error) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                SVProgressHUD.dismiss()
-                if (error != nil) {
-                    let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
-                    self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-                }
-            })
+        store.sync() { (count, tasks, error) -> Void in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+            }
         }
     }
     
@@ -136,6 +131,8 @@ class TasksViewController: UITableViewController {
                         
                         if (error != nil) {
                             let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            alert.addAction(defaultAction)
                             self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
                         }
                     })
