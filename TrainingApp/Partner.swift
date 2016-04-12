@@ -23,7 +23,7 @@ class Partner: NSObject, Persistable {
     }
     
     static func kinveyCollectionName() -> String {
-        return "partner"
+        return "Partner"
     }
     
     static func kinveyPropertyMapping() -> [String : String] {

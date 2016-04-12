@@ -21,7 +21,7 @@ class Task: NSObject, Persistable {
     }
     
     static func kinveyCollectionName() -> String {
-        return "todo"
+        return "Todo"   
     }
     
     static func kinveyPropertyMapping() -> [String : String] {

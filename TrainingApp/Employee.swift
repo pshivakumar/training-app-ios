@@ -1,19 +1,18 @@
 //
-//  Product.swift
+//  Employee.swift
 //  TrainingApp
 //
-//  Created by Victor Barros on 2016-02-08.
+//  Created by Vladislav Krasovsky on 4/12/16.
 //  Copyright © 2016 Kinvey. All rights reserved.
 //
 
 import Foundation
 import Kinvey
 
-class Product: NSObject, Persistable {
+class Employee: NSObject, Persistable {
     
     dynamic var objectId: String?
     dynamic var name: String?
-    dynamic var productDescription: String?
     
     override init() {
     }
@@ -23,14 +22,13 @@ class Product: NSObject, Persistable {
     }
     
     static func kinveyCollectionName() -> String {
-        return "Products"
+        return "Employees"
     }
     
     static func kinveyPropertyMapping() -> [String : String] {
         return [
             "objectId" : Kinvey.PersistableIdKey,
-            "name" : "productname",
-            "productDescription" : "productdesc"
+            "name" : "name"
         ]
     }
     
