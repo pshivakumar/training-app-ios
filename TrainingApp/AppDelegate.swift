@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        Kinvey.sharedClient.initialize(appKey: "kid_bJg1ypzual", appSecret: "d5e16c9315274c93920dc14f6ee79f0b")
+        Kinvey.sharedClient.initialize(appKey: "kid_Wy7NMiwaTx", appSecret: "18e581bc9c7046a5b1b20ae838105126")
         return true
     }
 
