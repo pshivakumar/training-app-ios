@@ -8,6 +8,7 @@
 
 import UIKit
 import Kinvey
+import SVProgressHUD
 
 class MediaViewController: UITableViewController {
 
@@ -21,37 +22,23 @@ class MediaViewController: UITableViewController {
         super.viewDidLoad()
         
         self.clearsSelectionOnViewWillAppear = false
-        self.refreshControl?.addTarget(self, action: #selector(loadDataFromServer), forControlEvents: .ValueChanged)
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
         
-        loadDataFromServer()
+        loadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         if Kinvey.sharedClient.activeUser != nil && self.refreshControl?.refreshing == false {
-            loadDataFromServer()
+            loadData()
         }
     }
     
-    //    func loadDataFromServer() {
-    //
-    //        store.pull() { (partners, error) -> Void in
-    //            self.refreshControl?.endRefreshing()
-    //            if let employees = employees {
-    //                self.employees = employees
-    //                if self.refreshControl?.refreshing ?? false {
-    //                    self.refreshControl?.endRefreshing()
-    //                }
-    //                self.tableView.reloadData()
-    //            }
-    //        }
-    //
-    //    }
-    
-    func loadDataFromServer() {
+    //always load from server
+    func loadData() {
         self.refreshControl?.beginRefreshing()
-        
         store.find { (medias, error) -> Void in
             self.refreshControl?.endRefreshing()
             if let medias = medias {
@@ -80,7 +67,6 @@ class MediaViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier")!
         
-        // Configure the cell...
         if indexPath.row < medias.count {
             let media = medias[indexPath.row]
             cell.textLabel?.text = media.name
@@ -88,5 +74,71 @@ class MediaViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            if indexPath.row < medias.count {
+                
+                let media = medias[indexPath.row]
+                medias.removeAtIndex(indexPath.row)
+                
+                if let _ = media.objectId {
+                    
+                    SVProgressHUD.show()
+                    store.removeById(media.objectId!, completionHandler: { (count, error) -> Void in
+                        
+                        SVProgressHUD.dismiss()
+                        
+                        if (error != nil) {
+                            let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            alert.addAction(defaultAction)
+                            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                        }
+                    })
+                }
+            }
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
 
+    
+    // MARK: - Navigation
+    
+    @IBAction func cancelAddingMedia(segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func saveMedia(segue: UIStoryboardSegue) {
+        if let addMediaViewController = segue.sourceViewController as? AddMediaViewController {
+            
+            if let media = addMediaViewController.media {
+                SVProgressHUD.show()
+
+                store.save(media) { (media, error) -> Void in
+                    SVProgressHUD.dismiss()
+
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        alert.addAction(defaultAction)
+                        self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                    }
+                    
+                    if let media = media{
+                        self.medias.append(media);
+                        self.tableView.reloadData()
+                    }
+                }
+
+            }
+        }
+    }
+
+   
 }

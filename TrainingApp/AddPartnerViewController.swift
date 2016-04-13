@@ -1,29 +1,30 @@
 //
-//  AddMediaViewController.swift
+//  AddPartnerViewController.swift
 //  TrainingApp
 //
-//  Created by Vladislav Krasovsky on 4/12/16.
+//  Created by Vladislav Krasovsky on 4/13/16.
 //  Copyright © 2016 Kinvey. All rights reserved.
 //
 
 import UIKit
 import Kinvey
 
-class AddMediaViewController: UIViewController {
+class AddPartnerViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var saveButtonItem: UIBarButtonItem!
-
-    var media: Media?
+    
+    var partner: Partner?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSaveButtonState()
     }
     
-
+    
     func updateSaveButtonState() {
-        saveButtonItem.enabled = nameTextField.text?.characters.count > 0
+        saveButtonItem.enabled = nameTextField.text?.characters.count > 0 && companyTextField.text?.characters.count > 0
     }
     
     @IBAction func editingChangedForTextField(sender: AnyObject) {
@@ -31,9 +32,9 @@ class AddMediaViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "saveMediaSegueId" {
-            media = Media(name: nameTextField.text!)
+        if segue.identifier == "savePartnerSegueId" {
+            partner = Partner(name: nameTextField.text!, company: companyTextField.text!)
         }
     }
- 
+
 }

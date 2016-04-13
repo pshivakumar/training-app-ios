@@ -29,7 +29,6 @@
 		EDB7A1859530BD672E0F56D2 /* Pods_TrainingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3887632010D2FA9BD11C913D /* Pods_TrainingApp.framework */; };
 		F23E4EE71CBD5CFA0004F75D /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E4EE61CBD5CFA0004F75D /* Employee.swift */; };
 		F23E4EE91CBD5D8D0004F75D /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E4EE81CBD5D8D0004F75D /* Media.swift */; };
-		F23E4EEB1CBD5EA50004F75D /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E4EEA1CBD5EA50004F75D /* EmployeesViewController.swift */; };
 		F23E4EED1CBD5EB10004F75D /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23E4EEC1CBD5EB10004F75D /* MediaViewController.swift */; };
 		F25DAE0E1CAD47DF00E53301 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25DAE0A1CAD47DF00E53301 /* KeychainAccess.framework */; };
 		F25DAE0F1CAD47DF00E53301 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F25DAE0A1CAD47DF00E53301 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -39,8 +38,8 @@
 		F25DAE131CAD47DF00E53301 /* PromiseKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F25DAE0C1CAD47DF00E53301 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F25DAE141CAD47DF00E53301 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F25DAE0D1CAD47DF00E53301 /* Realm.framework */; };
 		F25DAE151CAD47DF00E53301 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F25DAE0D1CAD47DF00E53301 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F29DA0741CBD896600A99224 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DA0731CBD896600A99224 /* AddEmployeeViewController.swift */; };
 		F29DA0761CBD897B00A99224 /* AddMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DA0751CBD897B00A99224 /* AddMediaViewController.swift */; };
+		F29DA0781CBE8CF700A99224 /* AddPartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DA0771CBE8CF700A99224 /* AddPartnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,14 +106,13 @@
 		CCA53723B7B210E84D647E3E /* Pods-TrainingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrainingApp/Pods-TrainingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F23E4EE61CBD5CFA0004F75D /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		F23E4EE81CBD5D8D0004F75D /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		F23E4EEA1CBD5EA50004F75D /* EmployeesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		F23E4EEC1CBD5EB10004F75D /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
 		F25DAE0A1CAD47DF00E53301 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KeychainAccess.framework; sourceTree = "<group>"; };
 		F25DAE0B1CAD47DF00E53301 /* Kinvey.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Kinvey.framework; sourceTree = "<group>"; };
 		F25DAE0C1CAD47DF00E53301 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromiseKit.framework; sourceTree = "<group>"; };
 		F25DAE0D1CAD47DF00E53301 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		F29DA0731CBD896600A99224 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		F29DA0751CBD897B00A99224 /* AddMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMediaViewController.swift; sourceTree = "<group>"; };
+		F29DA0771CBE8CF700A99224 /* AddPartnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPartnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,14 +214,13 @@
 				C68101031C80500C0060269B /* LoginViewController.swift */,
 				C68101081C80500C0060269B /* ProductsViewController.swift */,
 				C68101061C80500C0060269B /* PartnersViewController.swift */,
-				F23E4EEA1CBD5EA50004F75D /* EmployeesViewController.swift */,
+				F29DA0771CBE8CF700A99224 /* AddPartnerViewController.swift */,
 				F23E4EEC1CBD5EB10004F75D /* MediaViewController.swift */,
+				F29DA0751CBD897B00A99224 /* AddMediaViewController.swift */,
 				C667CF631C83499A007B7567 /* TaskCell.swift */,
 				C667CF611C805643007B7567 /* TasksViewController.swift */,
 				C667CF651C834F49007B7567 /* TaskDetailsViewController.swift */,
 				C667CF671C835970007B7567 /* AddTaskViewController.swift */,
-				F29DA0731CBD896600A99224 /* AddEmployeeViewController.swift */,
-				F29DA0751CBD897B00A99224 /* AddMediaViewController.swift */,
 				84E8E20B1CAAE88200F2E0BE /* CollateralsViewController.swift */,
 				84E936471CAB0AEF002F4BF8 /* FilePreviewViewController.swift */,
 			);
@@ -428,14 +425,13 @@
 				C68101151C80500C0060269B /* ProductsViewController.swift in Sources */,
 				C667CF661C834F49007B7567 /* TaskDetailsViewController.swift in Sources */,
 				C667CF641C83499A007B7567 /* TaskCell.swift in Sources */,
-				F23E4EEB1CBD5EA50004F75D /* EmployeesViewController.swift in Sources */,
 				F29DA0761CBD897B00A99224 /* AddMediaViewController.swift in Sources */,
 				F23E4EED1CBD5EB10004F75D /* MediaViewController.swift in Sources */,
-				F29DA0741CBD896600A99224 /* AddEmployeeViewController.swift in Sources */,
 				F23E4EE91CBD5D8D0004F75D /* Media.swift in Sources */,
 				C68101131C80500C0060269B /* PartnersViewController.swift in Sources */,
 				C681010D1C80500C0060269B /* Book.swift in Sources */,
 				C68101091C80500C0060269B /* AppDelegate.swift in Sources */,
+				F29DA0781CBE8CF700A99224 /* AddPartnerViewController.swift in Sources */,
 				C68101101C80500C0060269B /* LoginViewController.swift in Sources */,
 				C667CF601C80542E007B7567 /* Task.swift in Sources */,
 				C667CF621C805643007B7567 /* TasksViewController.swift in Sources */,

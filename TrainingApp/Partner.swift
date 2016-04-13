@@ -14,12 +14,19 @@ class Partner: NSObject, Persistable {
     dynamic var objectId: String?
     dynamic var name: String?
     dynamic var company: String?
-    
+//    dynamic var userName: String?
+//    dynamic var email: String?
+//    dynamic var address: String?
+//    dynamic var phone: String?
+//    dynamic var website: String?
+
+
     override init() {
     }
     
-    init(name: String) {
+    init(name: String, company: String) {
         self.name = name
+        self.company = company
     }
     
     static func kinveyCollectionName() -> String {
@@ -30,7 +37,12 @@ class Partner: NSObject, Persistable {
         return [
             "objectId" : Kinvey.PersistableIdKey,
             "name" : "partnername",
-            "company" : "partnercompany"
+            "company" : "partnercompany",
+//            "userName" : "username",
+//            "email" : "email",
+//            "address" : "address",
+//            "phone" : "phone",
+//            "website" : "website"
         ]
     }
     

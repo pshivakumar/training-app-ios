@@ -8,6 +8,7 @@
 
 import UIKit
 import Kinvey
+import SVProgressHUD
 
 class PartnersViewController: UITableViewController {
 
@@ -15,32 +16,36 @@ class PartnersViewController: UITableViewController {
     var partners = [Partner]()
     
     lazy var store: DataStore<Partner>! = {
-        //Create a DataStore of type "Sync"
-        return DataStore<Partner>.getInstance(.Sync)
+        return DataStore<Partner>.getInstance(.Cache)
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.clearsSelectionOnViewWillAppear = false
-        self.refreshControl?.addTarget(self, action: #selector(loadDataFromServer), forControlEvents: .ValueChanged)
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.refreshControl?.addTarget(self, action: #selector(pullData), forControlEvents: .ValueChanged)
 
-        loadDataFromServer()
+        pullData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         if Kinvey.sharedClient.activeUser != nil && self.refreshControl?.refreshing == false {
-            loadDataFromCache()
+            findPressed()
         }
     }
     
-    func loadDataFromServer() {
-        
+    func pullData() {
         self.refreshControl?.beginRefreshing()
         store.pull() { (partners, error) -> Void in
             self.refreshControl?.endRefreshing()
+            if (error != nil) {
+                let alert = UIAlertController(title: "Error", message: "Unable to pull", preferredStyle:.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+            }
+
             if let partners = partners {
                 self.partners = partners
                 if self.refreshControl?.refreshing ?? false {
@@ -49,15 +54,43 @@ class PartnersViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        
     }
     
-    func loadDataFromCache() {
-        
+    
+    @IBAction func findPressed() {
+        SVProgressHUD.show()
         store.find { (partners, error) -> Void in
+            SVProgressHUD.dismiss()
             if let partners = partners {
                 self.partners = partners
                 self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @IBAction func syncPressed(){
+        SVProgressHUD.show()
+        store.sync() { (count, products, error) -> Void in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                let alert = UIAlertController(title: "Error", message: "Unable to sync", preferredStyle:.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+            }
+        }
+    }
+
+    
+    @IBAction func pushPressed(){
+        SVProgressHUD.show()
+        store.push() { (count, error) -> Void in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
             }
         }
     }
@@ -91,5 +124,38 @@ class PartnersViewController: UITableViewController {
 
         return cell
     }
+    
+    // MARK: - Navigation
+    
+    @IBAction func cancelAddingPartner(segue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func savePartner(segue: UIStoryboardSegue) {
+        if let addPartnerViewController = segue.sourceViewController as? AddPartnerViewController {
+            
+            if let partner = addPartnerViewController.partner {
+                SVProgressHUD.show()
+                
+                store.save(partner) { (partner, error) -> Void in
+                    SVProgressHUD.dismiss()
+                    
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        alert.addAction(defaultAction)
+                        self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+                    }
+                    
+                    if let partner = partner{
+                        self.partners.append(partner);
+                        self.tableView.reloadData()
+                    }
+                }
+                
+            }
+        }
+    }
+    
+
 
 }
