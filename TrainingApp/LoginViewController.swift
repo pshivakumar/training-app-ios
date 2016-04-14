@@ -55,8 +55,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func tappedLoginWithMIC(sender: UIButton) {
 
-        let redirectUrl: NSURL = NSURL( string:"", relativeToURL:NSURL(string:"https://console.kinvey.com"))!
-        //let redirectUrl: NSURL = NSURL( string:"https://console.kinvey.com"))!
+        let redirectUrl: NSURL = NSURL( string:"training://")!
 
         User.presentMICViewController(redirectURI: redirectUrl, timeout: 60 * 5, forceUIWebView: false, client: Kinvey.sharedClient) { (user, errorType) in
             if (user != nil) {
