@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         Kinvey.sharedClient.initialize(appKey: "kid_Wy7NMiwaTx", appSecret: "18e581bc9c7046a5b1b20ae838105126")
+     //   KCSPush.registerForPush()
         return true
     }
 
@@ -34,13 +35,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+//        KCSPush.sharedPush().application(
+//            application,
+//            didRegisterForRemoteNotificationsWithDeviceToken: deviceToken,
+//            completionBlock: { (success: Bool, error: NSError!) -> Void in
+//                //if there is an error, try again later
+//            }
+//        )
+        // Additional registration goes here (if needed)
+    }
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+//        KCSPush.sharedPush().application(application, didReceiveRemoteNotification: userInfo)
+        // Additional push notification handling code should be performed here
+    }
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+//        KCSPush.sharedPush().application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+    }
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+//        KCSPush.sharedPush().registerForRemoteNotifications()
+        //Additional become active actions
     }
-
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+//        KCSPush.sharedPush().onUnloadHelper()
+        // Additional termination actions
     }
-
 }
 

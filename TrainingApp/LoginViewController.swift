@@ -52,14 +52,24 @@ class LoginViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
+    
+    @IBAction func tappedLoginWithMIC(sender: UIButton) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let redirectUrl: NSURL = NSURL( string:"", relativeToURL:NSURL(string:"https://console.kinvey.com"))!
+        //let redirectUrl: NSURL = NSURL( string:"https://console.kinvey.com"))!
+
+        User.presentMICViewController(redirectURI: redirectUrl, timeout: 60 * 5, forceUIWebView: false, client: Kinvey.sharedClient) { (user, errorType) in
+            if (user != nil) {
+                //logged in successfully
+                NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
+
+        
+
+        
     }
-    */
+   
 
 }

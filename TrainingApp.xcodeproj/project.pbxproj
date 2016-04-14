@@ -40,6 +40,7 @@
 		F25DAE151CAD47DF00E53301 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F25DAE0D1CAD47DF00E53301 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F29DA0761CBD897B00A99224 /* AddMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DA0751CBD897B00A99224 /* AddMediaViewController.swift */; };
 		F29DA0781CBE8CF700A99224 /* AddPartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DA0771CBE8CF700A99224 /* AddPartnerViewController.swift */; };
+		F29DA07A1CBFF0BF00A99224 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29DA0791CBFF0BF00A99224 /* LogoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		F25DAE0D1CAD47DF00E53301 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		F29DA0751CBD897B00A99224 /* AddMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMediaViewController.swift; sourceTree = "<group>"; };
 		F29DA0771CBE8CF700A99224 /* AddPartnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPartnerViewController.swift; sourceTree = "<group>"; };
+		F29DA0791CBFF0BF00A99224 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				C667CF671C835970007B7567 /* AddTaskViewController.swift */,
 				84E8E20B1CAAE88200F2E0BE /* CollateralsViewController.swift */,
 				84E936471CAB0AEF002F4BF8 /* FilePreviewViewController.swift */,
+				F29DA0791CBFF0BF00A99224 /* LogoutViewController.swift */,
 			);
 			path = TrainingApp;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				C667CF621C805643007B7567 /* TasksViewController.swift in Sources */,
 				C667CF681C835970007B7567 /* AddTaskViewController.swift in Sources */,
 				F23E4EE71CBD5CFA0004F75D /* Employee.swift in Sources */,
+				F29DA07A1CBFF0BF00A99224 /* LogoutViewController.swift in Sources */,
 				84E936481CAB0AEF002F4BF8 /* FilePreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
