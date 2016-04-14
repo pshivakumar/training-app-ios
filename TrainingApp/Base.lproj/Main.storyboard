@@ -175,18 +175,6 @@
                                         <action selector="tappedPush:" destination="1cl-MF-NSr" id="HBT-hE-nUi"/>
                                     </connections>
                                 </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="TZB-Mr-MVL"/>
-                                <barButtonItem title="Skip" id="I29-dc-0Xs">
-                                    <connections>
-                                        <action selector="tappedSkip:" destination="1cl-MF-NSr" id="lzU-yp-vrd"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="C0Z-oj-fIb"/>
-                                <barButtonItem title="Limit" id="6zl-w0-O0P">
-                                    <connections>
-                                        <action selector="tappedLimit:" destination="1cl-MF-NSr" id="IwK-PD-sdQ"/>
-                                    </connections>
-                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="KMM-h7-HEy"/>
                                 <barButtonItem title="Sort" id="nya-iF-dGD">
                                     <connections>
