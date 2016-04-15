@@ -42,6 +42,8 @@ class LoginViewController: UIViewController {
                 
                 NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
                 
+                Kinvey.sharedClient.push.registerForPush()
+                
                 //do nothing
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {

@@ -311,6 +311,12 @@
 				TargetAttributes = {
 					5701AB891C6916A900D7D9BB = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5W7CYNR7UE;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					5701AB9F1C6916A900D7D9BB = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -590,7 +596,7 @@
 				);
 				INFOPLIST_FILE = TrainingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.training;
 				PRODUCT_NAME = TrainingApp;
 			};
 			name = Debug;
@@ -606,7 +612,7 @@
 				);
 				INFOPLIST_FILE = TrainingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.TrainingApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.training;
 				PRODUCT_NAME = TrainingApp;
 			};
 			name = Release;
