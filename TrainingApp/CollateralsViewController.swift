@@ -33,6 +33,7 @@ class CollateralsViewController: UITableViewController {
     
     func loadDataFromServer() {
         self.refreshControl?.beginRefreshing()
+        //TODO: LAB: Get files from Kinvey
         //crash when quering pdf files (mimeType is nil )
         //let query = Query(format: "mimeType == %@", "application/pdf")
         let query = Query()

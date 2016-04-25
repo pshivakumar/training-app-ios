@@ -14,8 +14,8 @@ class TasksViewController: UITableViewController {
     
     var tasks = [Task]()
     
+    //TODO: LAB: create sync data store
     lazy var store: DataStore<Task>! = {
-        //Create a DataStore of type "Sync"
         return DataStore<Task>.getInstance(.Sync)
     }()
     
@@ -40,6 +40,7 @@ class TasksViewController: UITableViewController {
     func loadDataFromServer() {
         
         self.refreshControl?.beginRefreshing()
+        //TODO: LAB: pull Todos
         store.pull() { (tasks, error) -> Void in
             self.refreshControl?.endRefreshing()
             if let tasks = tasks {
@@ -53,7 +54,7 @@ class TasksViewController: UITableViewController {
     }
     
     func loadDataFromCache(query:Query = Query()) {
-        
+        //TODO: LAB: get all Todos by query
         store.find(query) { (tasks, error) -> Void in
             if let tasks = tasks {
                 self.tasks = tasks
@@ -65,6 +66,7 @@ class TasksViewController: UITableViewController {
     @IBAction func tappedPush(sender: AnyObject) {
         
         SVProgressHUD.show()
+        //TODO: LAB: push Todos
         store.sync() { (count, tasks, error) -> Void in
             SVProgressHUD.dismiss()
             if (error != nil) {
@@ -125,6 +127,7 @@ class TasksViewController: UITableViewController {
                 if let _ = product.objectId {
                     
                     SVProgressHUD.show()
+                    //TODO: LAB: delete Todos
                     store.removeById(product.objectId!, completionHandler: { (count, error) -> Void in
                         
                         SVProgressHUD.dismiss()

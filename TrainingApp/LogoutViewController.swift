@@ -13,6 +13,7 @@ import SVProgressHUD
 class LogoutViewController: UIViewController {
 
     @IBAction func logoutPressed(sender: AnyObject) {
+        //TODO: LAB: Get the active user and logout
         Kinvey.sharedClient.activeUser?.logout()
         self.tabBarController!.performSegueWithIdentifier("TabBarToLogin", sender: nil)
         self.tabBarController!.selectedIndex = 0

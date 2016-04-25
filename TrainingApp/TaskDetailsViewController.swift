@@ -13,8 +13,8 @@ class TaskDetailsViewController: UIViewController {
 
     var task: Task!
     
+    //TODO: LAB: create sync data store
     lazy var store: DataStore<Task>! = {
-        //Create a DataStore of type "Sync"
         return DataStore<Task>.getInstance(.Sync)
     }()
     
@@ -48,6 +48,7 @@ class TaskDetailsViewController: UIViewController {
     @IBAction func tappedSave(sender: AnyObject) {
         
         task.action = taskActionField.text
+        //TODO: LAB: update Todos
         store.save(task) { (savedTask, error) -> Void in
             
             if error == nil {

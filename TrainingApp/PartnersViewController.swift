@@ -15,6 +15,7 @@ class PartnersViewController: UITableViewController {
     
     var partners = [Partner]()
     
+    //TODO: LAB: create sync data store
     lazy var store: DataStore<Partner>! = {
         return DataStore<Partner>.getInstance(.Sync)
     }()
@@ -37,6 +38,7 @@ class PartnersViewController: UITableViewController {
     
     func pullData() {
         self.refreshControl?.beginRefreshing()
+        //TODO: LAB: Pull data from Kinvey
         store.pull() { (partners, error) -> Void in
             self.refreshControl?.endRefreshing()
             if (error != nil) {
@@ -59,6 +61,7 @@ class PartnersViewController: UITableViewController {
     
     @IBAction func findPressed() {
         SVProgressHUD.show()
+        //TODO: LAB: Get all Partners
         store.find { (partners, error) -> Void in
             SVProgressHUD.dismiss()
             if let partners = partners {
@@ -70,7 +73,8 @@ class PartnersViewController: UITableViewController {
     
     @IBAction func syncPressed(){
         SVProgressHUD.show()
-        store.sync() { (count, products, error) -> Void in
+        //TODO: LAB: sync cached changes and get new updates
+        store.sync() { (count, partners, error) -> Void in
             SVProgressHUD.dismiss()
             if (error != nil) {
                 let alert = UIAlertController(title: "Error", message: "Unable to sync", preferredStyle:.Alert)
@@ -78,12 +82,21 @@ class PartnersViewController: UITableViewController {
                 alert.addAction(defaultAction)
                 self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
             }
+            
+            if let partners = partners {
+                self.partners = partners
+                if self.refreshControl?.refreshing ?? false {
+                    self.refreshControl?.endRefreshing()
+                }
+                self.tableView.reloadData()
+            }
         }
     }
 
     
     @IBAction func pushPressed(){
         SVProgressHUD.show()
+        //TODO: LAB: Push cached changes to Kinvey
         store.push() { (count, error) -> Void in
             SVProgressHUD.dismiss()
             if (error != nil) {
@@ -136,6 +149,7 @@ class PartnersViewController: UITableViewController {
             if let partner = addPartnerViewController.partner {
                 SVProgressHUD.show()
                 
+                //TODO: LAB: Save a new Partner
                 store.save(partner) { (partner, error) -> Void in
                     SVProgressHUD.dismiss()
                     

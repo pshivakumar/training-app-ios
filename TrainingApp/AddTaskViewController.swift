@@ -17,8 +17,9 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var saveButtonItem: UIBarButtonItem!
 
     var task: Task?
+    
+    //TODO: LAB: create sync data store
     lazy var store: DataStore<Task>! = {
-        //Create a DataStore of type "Sync"
         return DataStore<Task>.getInstance(.Sync)
     }()
     
@@ -57,8 +58,8 @@ class AddTaskViewController: UIViewController {
         let task = Task()
         task.action = actionField.text
         task.completed = completedSwitch.on
-        //TODO: fix due date
         task.dueDate = "2016-02-25T12:33:09.124Z"
+        //TODO: LAB: Create a Todo
         store.save(task) { (task, error) -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
             
