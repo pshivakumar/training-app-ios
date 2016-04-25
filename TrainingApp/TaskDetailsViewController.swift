@@ -14,9 +14,6 @@ class TaskDetailsViewController: UIViewController {
     var task: Task!
     
     //TODO: LAB: create sync data store
-    lazy var store: DataStore<Task>! = {
-        return DataStore<Task>.getInstance(.Sync)
-    }()
     
     @IBOutlet weak var taskActionField: UITextField!
     override func viewDidLoad() {
@@ -49,18 +46,16 @@ class TaskDetailsViewController: UIViewController {
         
         task.action = taskActionField.text
         //TODO: LAB: update Todos
-        store.save(task) { (savedTask, error) -> Void in
-            
-            if error == nil {
-                self.navigationController?.popViewControllerAnimated(true)
-            }
-            else {
-                let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-            }
-        }
+        
+//            if error == nil {
+//                self.navigationController?.popViewControllerAnimated(true)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alert.addAction(defaultAction)
+//                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//            }
     }
 
 }

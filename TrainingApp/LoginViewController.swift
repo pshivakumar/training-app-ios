@@ -37,41 +37,30 @@ class LoginViewController: UIViewController {
         
         SVProgressHUD.show()
         //TODO: LAB: implement user login
-        User.login(username: login, password: password) { user, error in
             SVProgressHUD.dismiss()
-            if let _ = user {
-                
-                NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
-                
-                //TODO: LAB: implement push registration
-                Kinvey.sharedClient.push.registerForPush()
-                
-                //do nothing
-                self.dismissViewControllerAnimated(true, completion: nil)
-            } else {
-                
-                //do something!
-            }
-        }
+//            if let _ = user {
+//                
+//                NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
+//                
+//                //TODO: LAB: implement push registration
+//                
+//                //do nothing
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//            } else {
+//                
+//                //do something!
+//            }
         
     }
 
     
     @IBAction func tappedLoginWithMIC(sender: UIButton) {
-
-        let redirectUrl: NSURL = NSURL( string:"training://")!
-
         //TODO: LAB: implement MIC login
-        User.presentMICViewController(redirectURI: redirectUrl, timeout: 60 * 5, forceUIWebView: false, client: Kinvey.sharedClient) { (user, errorType) in
-            if (user != nil) {
-                //logged in successfully
-                NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
-
-        
-
+//            if (user != nil) {
+//                //logged in successfully
+//                NSNotificationCenter.defaultCenter().postNotificationName(LoginViewController.didLoginNotificationName, object: self)
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//            }
         
     }
    

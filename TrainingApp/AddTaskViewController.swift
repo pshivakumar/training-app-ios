@@ -19,9 +19,6 @@ class AddTaskViewController: UIViewController {
     var task: Task?
     
     //TODO: LAB: create sync data store
-    lazy var store: DataStore<Task>! = {
-        return DataStore<Task>.getInstance(.Sync)
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +57,13 @@ class AddTaskViewController: UIViewController {
         task.completed = completedSwitch.on
         task.dueDate = "2016-02-25T12:33:09.124Z"
         //TODO: LAB: Create a Todo
-        store.save(task) { (task, error) -> Void in
             self.dismissViewControllerAnimated(true, completion: nil)
             
-            if error != nil {
-                let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-            }
-        }
+//            if error != nil {
+//                let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alert.addAction(defaultAction)
+//                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//            }
     }
 }

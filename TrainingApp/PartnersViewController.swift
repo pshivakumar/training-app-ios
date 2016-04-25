@@ -16,9 +16,6 @@ class PartnersViewController: UITableViewController {
     var partners = [Partner]()
     
     //TODO: LAB: create sync data store
-    lazy var store: DataStore<Partner>! = {
-        return DataStore<Partner>.getInstance(.Sync)
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,73 +36,45 @@ class PartnersViewController: UITableViewController {
     func pullData() {
         self.refreshControl?.beginRefreshing()
         //TODO: LAB: Pull data from Kinvey
-        store.pull() { (partners, error) -> Void in
             self.refreshControl?.endRefreshing()
-            if (error != nil) {
-                let alert = UIAlertController(title: "Error", message: "Unable to pull", preferredStyle:.Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-            }
-
-            if let partners = partners {
-                self.partners = partners
-                if self.refreshControl?.refreshing ?? false {
-                    self.refreshControl?.endRefreshing()
-                }
-                self.tableView.reloadData()
-            }
-        }
+//            if (error != nil) {
+//                let alert = UIAlertController(title: "Error", message: "Unable to pull", preferredStyle:.Alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alert.addAction(defaultAction)
+//                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//            }
     }
     
     
     @IBAction func findPressed() {
         SVProgressHUD.show()
         //TODO: LAB: Get all Partners
-        store.find { (partners, error) -> Void in
             SVProgressHUD.dismiss()
-            if let partners = partners {
-                self.partners = partners
-                self.tableView.reloadData()
-            }
-        }
     }
     
     @IBAction func syncPressed(){
         SVProgressHUD.show()
         //TODO: LAB: sync cached changes and get new updates
-        store.sync() { (count, partners, error) -> Void in
             SVProgressHUD.dismiss()
-            if (error != nil) {
-                let alert = UIAlertController(title: "Error", message: "Unable to sync", preferredStyle:.Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-            }
-            
-            if let partners = partners {
-                self.partners = partners
-                if self.refreshControl?.refreshing ?? false {
-                    self.refreshControl?.endRefreshing()
-                }
-                self.tableView.reloadData()
-            }
-        }
+//            if (error != nil) {
+//                let alert = UIAlertController(title: "Error", message: "Unable to sync", preferredStyle:.Alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alert.addAction(defaultAction)
+//                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//            }
     }
 
     
     @IBAction func pushPressed(){
         SVProgressHUD.show()
         //TODO: LAB: Push cached changes to Kinvey
-        store.push() { (count, error) -> Void in
             SVProgressHUD.dismiss()
-            if (error != nil) {
-                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-            }
-        }
+//            if (error != nil) {
+//                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alert.addAction(defaultAction)
+//                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//            }
     }
     
     override func setEditing(editing: Bool, animated: Bool) {
@@ -150,21 +119,14 @@ class PartnersViewController: UITableViewController {
                 SVProgressHUD.show()
                 
                 //TODO: LAB: Save a new Partner
-                store.save(partner) { (partner, error) -> Void in
                     SVProgressHUD.dismiss()
                     
-                    if error != nil {
-                        let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
-                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                        alert.addAction(defaultAction)
-                        self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-                    }
-                    
-                    if let partner = partner{
-                        self.partners.append(partner);
-                        self.tableView.reloadData()
-                    }
-                }
+//                    if error != nil {
+//                        let alert = UIAlertController(title: "Error", message: "Unable to save", preferredStyle:.Alert)
+//                        let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                        alert.addAction(defaultAction)
+//                        self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//                    }
                 
             }
         }

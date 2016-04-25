@@ -15,9 +15,6 @@ class TasksViewController: UITableViewController {
     var tasks = [Task]()
     
     //TODO: LAB: create sync data store
-    lazy var store: DataStore<Task>! = {
-        return DataStore<Task>.getInstance(.Sync)
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,41 +38,24 @@ class TasksViewController: UITableViewController {
         
         self.refreshControl?.beginRefreshing()
         //TODO: LAB: pull Todos
-        store.pull() { (tasks, error) -> Void in
             self.refreshControl?.endRefreshing()
-            if let tasks = tasks {
-                self.tasks = tasks
-                if self.refreshControl?.refreshing ?? false {
-                    self.refreshControl?.endRefreshing()
-                }
-                self.tableView.reloadData()
-            }
-        }
     }
     
     func loadDataFromCache(query:Query = Query()) {
         //TODO: LAB: get all Todos by query
-        store.find(query) { (tasks, error) -> Void in
-            if let tasks = tasks {
-                self.tasks = tasks
-                self.tableView.reloadData()
-            }
-        }
     }
 
     @IBAction func tappedPush(sender: AnyObject) {
         
         SVProgressHUD.show()
         //TODO: LAB: push Todos
-        store.sync() { (count, tasks, error) -> Void in
-            SVProgressHUD.dismiss()
-            if (error != nil) {
-                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(defaultAction)
-                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-            }
-        }
+//            SVProgressHUD.dismiss()
+//            if (error != nil) {
+//                let alert = UIAlertController(title: "Error", message: "Unable to push", preferredStyle:.Alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alert.addAction(defaultAction)
+//                self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//            }
     }
     
     override func setEditing(editing: Bool, animated: Bool) {
@@ -128,17 +108,14 @@ class TasksViewController: UITableViewController {
                     
                     SVProgressHUD.show()
                     //TODO: LAB: delete Todos
-                    store.removeById(product.objectId!, completionHandler: { (count, error) -> Void in
-                        
-                        SVProgressHUD.dismiss()
-                        
-                        if (error != nil) {
-                            let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                            alert.addAction(defaultAction)
-                            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
-                        }
-                    })
+                    
+//                        SVProgressHUD.dismiss()
+//                        if (error != nil) {
+//                            let alert = UIAlertController(title: "Error", message: "Unable to delete", preferredStyle:.Alert)
+//                            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                            alert.addAction(defaultAction)
+//                            self.tabBarController?.presentViewController(alert, animated:true, completion:nil)
+//                        }
                 }
             }
             
