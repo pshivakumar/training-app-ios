@@ -16,7 +16,7 @@ class PartnersViewController: UITableViewController {
     var partners = [Partner]()
     
     lazy var store: DataStore<Partner>! = {
-        return DataStore<Partner>.getInstance(.Cache)
+        return DataStore<Partner>.getInstance(.Sync)
     }()
     
     override func viewDidLoad() {
